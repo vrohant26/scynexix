@@ -356,7 +356,7 @@ function scynexis_render_home_metabox( $post ) {
 		</div>
 
 		<!-- PURPOSE SETTINGS -->
-		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">5. Purpose Section Settings</h2>
+		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">4. Purpose Section Settings</h2>
 		
 		<p style="margin-bottom: 15px;">
 			<label for="scynexis_purpose_subtitle"><strong>Purpose Subtitle (Pill):</strong></label><br />
@@ -419,7 +419,7 @@ function scynexis_render_home_metabox( $post ) {
 		</div>
 
 		<!-- DISEASE AREAS SETTINGS -->
-		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">6. Disease Areas Settings</h2>
+		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">5. Disease Areas Settings</h2>
 		
 		<p style="margin-bottom: 15px;">
 			<label for="scynexis_disease_subtitle"><strong>Disease Areas Subtitle:</strong></label><br />
@@ -481,7 +481,7 @@ function scynexis_render_home_metabox( $post ) {
 		</div>
 
 		<!-- PIPELINE SECTION SETTINGS -->
-		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">7. Pipeline Section Settings</h2>
+		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">6. Pipeline Section Settings</h2>
 		
 		<p style="margin-bottom: 15px;">
 			<label for="scynexis_pipe_subtitle"><strong>Pipeline Subtitle:</strong></label><br />
@@ -554,8 +554,38 @@ function scynexis_render_home_metabox( $post ) {
 			</div>
 		</div>
 
+		<!-- NEWS SECTION SETTINGS -->
+		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">7. Latest News Settings</h2>
+		
+		<p style="margin-bottom: 15px;">
+			<label for="scynexis_news_subtitle"><strong>News Subtitle:</strong></label><br />
+			<input type="text" id="scynexis_news_subtitle" name="news_subtitle" value="<?php echo esc_attr( $news_subtitle ); ?>" style="width: 100%; max-width: 600px;" placeholder="Latest News" />
+		</p>
+
+		<p style="margin-bottom: 15px;">
+			<label for="scynexis_news_title"><strong>News Headline:</strong> (HTML tags like &lt;em&gt; supported)</label><br />
+			<input type="text" id="scynexis_news_title" name="news_title" value="<?php echo esc_attr( $news_title ); ?>" style="width: 100%; max-width: 600px;" placeholder="Stay Up to Date With Our &lt;em&gt;Latest Progress&lt;/em&gt;" />
+		</p>
+
+		<p style="margin-bottom: 15px;">
+			<label for="scynexis_news_desc"><strong>News Description:</strong></label><br />
+			<textarea id="scynexis_news_desc" name="news_desc" rows="3" style="width: 100%; max-width: 600px;" placeholder="Follow the latest scientific advancements..."><?php echo esc_textarea( $news_desc ); ?></textarea>
+		</p>
+
+		<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 600px; margin-bottom: 25px;">
+			<div>
+				<label for="scynexis_news_btn_text"><strong>CTA Button Text:</strong></label>
+				<input type="text" id="scynexis_news_btn_text" name="news_btn_text" value="<?php echo esc_attr( $news_btn_text ); ?>" style="width: 100%;" placeholder="View All" />
+			</div>
+			<div>
+				<label for="scynexis_news_btn_link"><strong>CTA Button Link:</strong></label>
+				<input type="text" id="scynexis_news_btn_link" name="news_btn_link" value="<?php echo esc_attr( $news_btn_link ); ?>" style="width: 100%;" placeholder="#news" />
+			</div>
+		</div>
+		<p style="color: #646970; font-style: italic;">News cards are automatically pulled from the 7 most recent posts in WordPress.</p>
+
 		<!-- INVESTOR RELATIONS SECTION SETTINGS -->
-		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">9. Investor Relations Settings</h2>
+		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">8. Investor Relations Settings</h2>
 		
 		<p style="margin-bottom: 15px;">
 			<label for="scynexis_investor_subtitle"><strong>Investor Subtitle (Pill):</strong></label><br />
@@ -634,7 +664,7 @@ function scynexis_render_home_metabox( $post ) {
 		</div>
 
 		<!-- CTA BANNER SECTION SETTINGS -->
-		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">10. CTA Banner Settings</h2>
+		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">9. CTA Banner Settings</h2>
 		
 		<p style="margin-bottom: 15px;">
 			<label for="scynexis_cta_banner_subtitle"><strong>CTA Banner Subtitle (Pill):</strong></label><br />
@@ -663,7 +693,7 @@ function scynexis_render_home_metabox( $post ) {
 		</div>
 
 		<!-- FAQ SECTION SETTINGS -->
-		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">11. FAQ Accordion Settings</h2>
+		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">10. FAQ Accordion Settings</h2>
 		
 		<p style="margin-bottom: 15px;">
 			<label for="scynexis_faq_subtitle"><strong>FAQ Subtitle (Pill):</strong></label><br />
@@ -680,35 +710,7 @@ function scynexis_render_home_metabox( $post ) {
 			<textarea id="scynexis_faq_desc" name="faq_desc" rows="3" style="width: 100%; max-width: 600px;" placeholder="Find answers to common questions about SCYNEXIS's..."><?php echo esc_textarea( $faq_desc ); ?></textarea>
 		</p>
 
-		<!-- NEWS SECTION SETTINGS -->
-		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">8. Latest News Settings</h2>
-		
-		<p style="margin-bottom: 15px;">
-			<label for="scynexis_news_subtitle"><strong>News Subtitle:</strong></label><br />
-			<input type="text" id="scynexis_news_subtitle" name="news_subtitle" value="<?php echo esc_attr( $news_subtitle ); ?>" style="width: 100%; max-width: 600px;" placeholder="Latest News" />
-		</p>
 
-		<p style="margin-bottom: 15px;">
-			<label for="scynexis_news_title"><strong>News Headline:</strong> (HTML tags like &lt;em&gt; supported)</label><br />
-			<input type="text" id="scynexis_news_title" name="news_title" value="<?php echo esc_attr( $news_title ); ?>" style="width: 100%; max-width: 600px;" placeholder="Stay Up to Date With Our &lt;em&gt;Latest Progress&lt;/em&gt;" />
-		</p>
-
-		<p style="margin-bottom: 15px;">
-			<label for="scynexis_news_desc"><strong>News Description:</strong></label><br />
-			<textarea id="scynexis_news_desc" name="news_desc" rows="3" style="width: 100%; max-width: 600px;" placeholder="Follow the latest scientific advancements..."><?php echo esc_textarea( $news_desc ); ?></textarea>
-		</p>
-
-		<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 600px; margin-bottom: 25px;">
-			<div>
-				<label for="scynexis_news_btn_text"><strong>CTA Button Text:</strong></label>
-				<input type="text" id="scynexis_news_btn_text" name="news_btn_text" value="<?php echo esc_attr( $news_btn_text ); ?>" style="width: 100%;" placeholder="View All" />
-			</div>
-			<div>
-				<label for="scynexis_news_btn_link"><strong>CTA Button Link:</strong></label>
-				<input type="text" id="scynexis_news_btn_link" name="news_btn_link" value="<?php echo esc_attr( $news_btn_link ); ?>" style="width: 100%;" placeholder="#news" />
-			</div>
-		</div>
-		<p style="color: #646970; font-style: italic;">News cards are automatically pulled from the 7 most recent posts in WordPress.</p>
 
 		<script>
 		jQuery(document).ready(function($){
