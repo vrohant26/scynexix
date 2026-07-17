@@ -245,6 +245,104 @@ if ( empty( $pipe_btn_link ) ) {
 	$pipe_btn_link = '#pipeline';
 }
 
+// Fetch Investor Relations metadata
+$investor_subtitle = get_post_meta( $page_id, '_investor_subtitle', true );
+if ( empty( $investor_subtitle ) ) {
+	$investor_subtitle = 'Investor Relations';
+}
+$investor_title = get_post_meta( $page_id, '_investor_title', true );
+if ( empty( $investor_title ) ) {
+	$investor_title = 'Building Long-Term Value Through <em>Scientific Innovation</em>';
+}
+$investor_desc = get_post_meta( $page_id, '_investor_desc', true );
+if ( empty( $investor_desc ) ) {
+	$investor_desc = 'SCYNEXIS is advancing a focused pipeline of innovative therapies for severe rare diseases through scientific excellence, clinical development, and strategic partnerships. Explore our latest financial reports, corporate governance, SEC filings, and company milestones.';
+}
+$investor_btn1_text = get_post_meta( $page_id, '_investor_btn1_text', true );
+if ( empty( $investor_btn1_text ) ) {
+	$investor_btn1_text = 'Investor Center';
+}
+$investor_btn1_link = get_post_meta( $page_id, '_investor_btn1_link', true );
+if ( empty( $investor_btn1_link ) ) {
+	$investor_btn1_link = '#investor';
+}
+$investor_btn2_text = get_post_meta( $page_id, '_investor_btn2_text', true );
+if ( empty( $investor_btn2_text ) ) {
+	$investor_btn2_text = 'Latest Reports';
+}
+$investor_btn2_link = get_post_meta( $page_id, '_investor_btn2_link', true );
+if ( empty( $investor_btn2_link ) ) {
+	$investor_btn2_link = '#reports';
+}
+$investor_ticker = get_post_meta( $page_id, '_investor_ticker', true );
+if ( empty( $investor_ticker ) ) {
+	$investor_ticker = 'SCYX';
+}
+$investor_stock_price = get_post_meta( $page_id, '_investor_stock_price', true );
+if ( empty( $investor_stock_price ) || $investor_stock_price === '2.18' || $investor_stock_price === '2.11' ) {
+	$investor_stock_price = '4.52';
+}
+$investor_stock_change = get_post_meta( $page_id, '_investor_stock_change', true );
+if ( empty( $investor_stock_change ) || $investor_stock_change === '+3.81%' ) {
+	$investor_stock_change = '+1.00%';
+}
+$investor_market_cap = get_post_meta( $page_id, '_investor_market_cap', true );
+if ( empty( $investor_market_cap ) ) {
+	$investor_market_cap = '$84.2M';
+}
+$investor_range = get_post_meta( $page_id, '_investor_range', true );
+if ( empty( $investor_range ) ) {
+	$investor_range = '$1.12 - $3.40';
+}
+$investor_volume = get_post_meta( $page_id, '_investor_volume', true );
+if ( empty( $investor_volume ) ) {
+	$investor_volume = '142K';
+}
+$investor_stock_btn_text = get_post_meta( $page_id, '_investor_stock_btn_text', true );
+if ( empty( $investor_stock_btn_text ) ) {
+	$investor_stock_btn_text = 'View Stock Information';
+}
+$investor_stock_btn_link = get_post_meta( $page_id, '_investor_stock_btn_link', true );
+if ( empty( $investor_stock_btn_link ) ) {
+	$investor_stock_btn_link = '#stock-info';
+}
+
+// Fetch CTA Banner metadata
+$cta_banner_subtitle = get_post_meta( $page_id, '_cta_banner_subtitle', true );
+if ( empty( $cta_banner_subtitle ) ) {
+	$cta_banner_subtitle = 'Partner With Us';
+}
+$cta_banner_title = get_post_meta( $page_id, '_cta_banner_title', true );
+if ( empty( $cta_banner_title ) ) {
+	$cta_banner_title = 'Advancing Science, <em>Improving Outcomes</em>';
+}
+$cta_banner_desc = get_post_meta( $page_id, '_cta_banner_desc', true );
+if ( empty( $cta_banner_desc ) ) {
+	$cta_banner_desc = 'We collaborate with global leaders, research organizations, and clinicians to develop and commercialize therapies addressing high-unmet-need medical conditions.';
+}
+$cta_banner_btn_text = get_post_meta( $page_id, '_cta_banner_btn_text', true );
+if ( empty( $cta_banner_btn_text ) ) {
+	$cta_banner_btn_text = 'Explore Partnerships';
+}
+$cta_banner_btn_link = get_post_meta( $page_id, '_cta_banner_btn_link', true );
+if ( empty( $cta_banner_btn_link ) ) {
+	$cta_banner_btn_link = '#partnership';
+}
+
+// Fetch FAQ metadata
+$faq_subtitle = get_post_meta( $page_id, '_faq_subtitle', true );
+if ( empty( $faq_subtitle ) ) {
+	$faq_subtitle = 'FAQ';
+}
+$faq_title = get_post_meta( $page_id, '_faq_title', true );
+if ( empty( $faq_title ) ) {
+	$faq_title = 'Frequently Asked <em>Questions</em>';
+}
+$faq_desc = get_post_meta( $page_id, '_faq_desc', true );
+if ( empty( $faq_desc ) ) {
+	$faq_desc = 'Find answers to common questions about SCYNEXIS\'s research, pipeline programs, and corporate milestones.';
+}
+
 // Fetch News metadata
 $news_subtitle = get_post_meta( $page_id, '_news_subtitle', true );
 if ( empty( $news_subtitle ) ) {
@@ -565,6 +663,167 @@ if ( empty( $purpose_image_url ) ) {
 			
 			<div class="news-footer">
 				<a href="<?php echo esc_url( $news_btn_link ); ?>" class="btn btn-outline-light fs-base"><?php echo esc_html( $news_btn_text ); ?></a>
+			</div>
+		</div>
+	</section>
+
+	<section class="investor-section">
+		<div class="investor-container">
+			<div class="investor-grid">
+				<!-- Left Column (35%): Glassmorphism Ticker Card -->
+				<div class="investor-stock-col">
+					<div class="stock-glass-card">
+						<div class="stock-card-header">
+							<div class="ticker-badge"><?php echo esc_html( $investor_ticker ); ?></div>
+							<div class="market-label fs-xs">NASDAQ Listed</div>
+						</div>
+						
+						<div class="stock-price-block">
+							<div class="price-row">
+								<span class="stock-currency">$</span><span class="stock-price-val"><?php echo esc_html( $investor_stock_price ); ?></span>
+							</div>
+							<div class="stock-change up">
+								<span class="change-indicator">&uarr;</span> <span class="change-val"><?php echo esc_html( $investor_stock_change ); ?></span>
+							</div>
+						</div>
+						
+						<!-- Sparkline Chart -->
+						<div class="stock-chart-wrapper">
+							<svg viewBox="0 0 300 80" class="sparkline-svg">
+								<defs>
+									<linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+										<stop offset="0%" stop-color="#22C55E" stop-opacity="0.25"></stop>
+										<stop offset="100%" stop-color="#22C55E" stop-opacity="0"></stop>
+									</linearGradient>
+								</defs>
+								<!-- Fill under line -->
+								<path d="M 0 60 Q 30 50 60 55 T 120 40 T 180 45 T 240 30 T 300 20 L 300 80 L 0 80 Z" fill="url(#chartGrad)"></path>
+								<!-- The line -->
+								<path d="M 0 60 Q 30 50 60 55 T 120 40 T 180 45 T 240 30 T 300 20" fill="none" stroke="#22C55E" stroke-width="2.5" stroke-linecap="round"></path>
+								<circle cx="300" cy="20" r="4" fill="#22C55E"></circle>
+							</svg>
+						</div>
+						
+						<div class="stock-stats-grid fs-xs">
+							<div class="stat-item">
+								<span class="stat-lbl">Market Cap</span>
+								<span class="stat-val"><?php echo esc_html( $investor_market_cap ); ?></span>
+							</div>
+							<div class="stat-item">
+								<span class="stat-lbl">Volume</span>
+								<span class="stat-val"><?php echo esc_html( $investor_volume ); ?></span>
+							</div>
+							<div class="stat-item span-2">
+								<span class="stat-lbl">52-Week Range</span>
+								<span class="stat-val"><?php echo esc_html( $investor_range ); ?></span>
+							</div>
+						</div>
+						
+						<div class="stock-card-action">
+							<a href="<?php echo esc_url( $investor_stock_btn_link ); ?>" class="btn-primary btn-block fs-xs"><?php echo esc_html( $investor_stock_btn_text ); ?></a>
+						</div>
+					</div>
+				</div>
+				
+				<!-- Right Column (65%): Investor Relations Details -->
+				<div class="investor-details-col">
+					<div class="investor-subtitle fs-xs"><?php echo esc_html( $investor_subtitle ); ?></div>
+					
+					<h2 class="investor-title"><?php echo wp_kses_post( $investor_title ); ?></h2>
+					
+					<div class="investor-desc fs-md">
+						<p><?php echo esc_html( $investor_desc ); ?></p>
+					</div>
+					
+					<div class="investor-actions">
+						<a href="<?php echo esc_url( $investor_btn1_link ); ?>" class="btn-primary fs-base"><?php echo esc_html( $investor_btn1_text ); ?></a>
+						<a href="<?php echo esc_url( $investor_btn2_link ); ?>" class="btn-secondary fs-base"><?php echo esc_html( $investor_btn2_text ); ?></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA Banner Section -->
+	<section class="cta-banner-section" style="background-image: url('<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/cta-banner-bg.png');">
+		<div class="cta-banner-overlay"></div>
+		<div class="cta-banner-container">
+			<div class="cta-banner-content">
+				<div class="cta-banner-subtitle fs-xs"><?php echo esc_html( $cta_banner_subtitle ); ?></div>
+				<h2 class="cta-banner-title"><?php echo wp_kses_post( $cta_banner_title ); ?></h2>
+				<div class="cta-banner-desc fs-md">
+					<p><?php echo esc_html( $cta_banner_desc ); ?></p>
+				</div>
+				<div class="cta-banner-actions">
+					<a href="<?php echo esc_url( $cta_banner_btn_link ); ?>" class="btn-primary fs-base"><?php echo esc_html( $cta_banner_btn_text ); ?></a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ Section -->
+	<section class="faq-section">
+		<div class="faq-container">
+			<div class="faq-grid">
+				<!-- Left Column: Sticky Title & Desc -->
+				<div class="faq-sticky-col">
+					<div class="faq-subtitle fs-xs"><?php echo esc_html( $faq_subtitle ); ?></div>
+					<h2 class="faq-title"><?php echo wp_kses_post( $faq_title ); ?></h2>
+					<div class="faq-desc fs-md">
+						<p><?php echo esc_html( $faq_desc ); ?></p>
+					</div>
+				</div>
+				
+				<!-- Right Column: Accordions -->
+				<div class="faq-accordion-col">
+					<div class="faq-item">
+						<button type="button" class="faq-trigger" aria-expanded="false">
+							<span class="faq-question-text">What is SCYNEXIS's main therapeutic focus?</span>
+							<span class="faq-icon-indicator">+</span>
+						</button>
+						<div class="faq-answer-panel">
+							<div class="faq-answer-inner fs-base">
+								<p>SCYNEXIS is focused on developing and commercializing innovative therapies to overcome and prevent severe rare diseases, including autosomal dominant polycystic kidney disease (ADPKD) and serious fungal infections.</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="faq-item">
+						<button type="button" class="faq-trigger" aria-expanded="false">
+							<span class="faq-question-text">What is the clinical status of SCY-770?</span>
+							<span class="faq-icon-indicator">+</span>
+						</button>
+						<div class="faq-answer-panel">
+							<div class="faq-answer-inner fs-base">
+								<p>SCY-770 is a novel, highly selective, clinical-stage direct AMPK activator currently under development as a potential therapeutic approach for autosomal dominant polycystic kidney disease (ADPKD) to address metabolic abnormalities driving cyst growth.</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="faq-item">
+						<button type="button" class="faq-trigger" aria-expanded="false">
+							<span class="faq-question-text">How does the Fungerp® platform target resistant pathogens?</span>
+							<span class="faq-icon-indicator">+</span>
+						</button>
+						<div class="faq-answer-panel">
+							<div class="faq-answer-inner fs-base">
+								<p>Our Fungerp® platform represents a structurally distinct class of systemic antifungal agents that inhibit glucan synthase, offering broad-spectrum activity against multi-drug resistant pathogens, including Candida auris.</p>
+							</div>
+						</div>
+					</div>
+					
+					<div class="faq-item">
+						<button type="button" class="faq-trigger" aria-expanded="false">
+							<span class="faq-question-text">How are SCYNEXIS lead programs commercialized?</span>
+							<span class="faq-icon-indicator">+</span>
+						</button>
+						<div class="faq-answer-panel">
+							<div class="faq-answer-inner fs-base">
+								<p>Our first approved therapy, BREXAFEMME® (ibrexafungerp), is licensed to GSK for commercialization, demonstrating our ability to successfully transition discovery science into clinical and commercial value.</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</section>

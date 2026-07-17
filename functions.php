@@ -174,6 +174,33 @@ function scynexis_render_home_metabox( $post ) {
 	$news_btn_text   = get_post_meta( $post->ID, '_news_btn_text', true );
 	$news_btn_link   = get_post_meta( $post->ID, '_news_btn_link', true );
 
+	// Retrieve Investor Relations metadata
+	$investor_subtitle       = get_post_meta( $post->ID, '_investor_subtitle', true );
+	$investor_title          = get_post_meta( $post->ID, '_investor_title', true );
+	$investor_desc           = get_post_meta( $post->ID, '_investor_desc', true );
+	$investor_btn1_text      = get_post_meta( $post->ID, '_investor_btn1_text', true );
+	$investor_btn1_link      = get_post_meta( $post->ID, '_investor_btn1_link', true );
+	$investor_btn2_text      = get_post_meta( $post->ID, '_investor_btn2_text', true );
+	$investor_btn2_link      = get_post_meta( $post->ID, '_investor_btn2_link', true );
+	$investor_ticker         = get_post_meta( $post->ID, '_investor_ticker', true );
+	$investor_stock_price    = get_post_meta( $post->ID, '_investor_stock_price', true );
+	$investor_stock_change   = get_post_meta( $post->ID, '_investor_stock_change', true );
+	$investor_market_cap     = get_post_meta( $post->ID, '_investor_market_cap', true );
+	$investor_range          = get_post_meta( $post->ID, '_investor_range', true );
+	$investor_volume         = get_post_meta( $post->ID, '_investor_volume', true );
+	$investor_stock_btn_text = get_post_meta( $post->ID, '_investor_stock_btn_text', true );
+	$investor_stock_btn_link = get_post_meta( $post->ID, '_investor_stock_btn_link', true );
+
+	// Retrieve CTA Banner and FAQ metadata
+	$cta_banner_subtitle  = get_post_meta( $post->ID, '_cta_banner_subtitle', true );
+	$cta_banner_title     = get_post_meta( $post->ID, '_cta_banner_title', true );
+	$cta_banner_desc      = get_post_meta( $post->ID, '_cta_banner_desc', true );
+	$cta_banner_btn_text  = get_post_meta( $post->ID, '_cta_banner_btn_text', true );
+	$cta_banner_btn_link  = get_post_meta( $post->ID, '_cta_banner_btn_link', true );
+	$faq_subtitle         = get_post_meta( $post->ID, '_faq_subtitle', true );
+	$faq_title            = get_post_meta( $post->ID, '_faq_title', true );
+	$faq_desc             = get_post_meta( $post->ID, '_faq_desc', true );
+
 	// Retrieve Purpose metadata
 	$purpose_subtitle    = get_post_meta( $post->ID, '_purpose_subtitle', true );
 	$purpose_title       = get_post_meta( $post->ID, '_purpose_title', true );
@@ -527,6 +554,132 @@ function scynexis_render_home_metabox( $post ) {
 			</div>
 		</div>
 
+		<!-- INVESTOR RELATIONS SECTION SETTINGS -->
+		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">9. Investor Relations Settings</h2>
+		
+		<p style="margin-bottom: 15px;">
+			<label for="scynexis_investor_subtitle"><strong>Investor Subtitle (Pill):</strong></label><br />
+			<input type="text" id="scynexis_investor_subtitle" name="investor_subtitle" value="<?php echo esc_attr( $investor_subtitle ); ?>" style="width: 100%; max-width: 600px;" placeholder="Investor Relations" />
+		</p>
+
+		<p style="margin-bottom: 15px;">
+			<label for="scynexis_investor_title"><strong>Headline:</strong> (HTML like &lt;em&gt; supported)</label><br />
+			<input type="text" id="scynexis_investor_title" name="investor_title" value="<?php echo esc_attr( $investor_title ); ?>" style="width: 100%; max-width: 600px;" placeholder="Building Long-Term Value Through &lt;em&gt;Scientific Innovation&lt;/em&gt;" />
+		</p>
+
+		<p style="margin-bottom: 15px;">
+			<label for="scynexis_investor_desc"><strong>Supporting Paragraph:</strong></label><br />
+			<textarea id="scynexis_investor_desc" name="investor_desc" rows="4" style="width: 100%; max-width: 600px;" placeholder="SCYNEXIS is advancing a focused pipeline..."><?php echo esc_textarea( $investor_desc ); ?></textarea>
+		</p>
+
+		<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 600px; margin-bottom: 25px;">
+			<div>
+				<label for="scynexis_investor_btn1_text"><strong>Button 1 Text:</strong></label>
+				<input type="text" id="scynexis_investor_btn1_text" name="investor_btn1_text" value="<?php echo esc_attr( $investor_btn1_text ); ?>" style="width: 100%;" placeholder="Investor Center" />
+			</div>
+			<div>
+				<label for="scynexis_investor_btn1_link"><strong>Button 1 Link:</strong></label>
+				<input type="text" id="scynexis_investor_btn1_link" name="investor_btn1_link" value="<?php echo esc_attr( $investor_btn1_link ); ?>" style="width: 100%;" placeholder="#investor-center" />
+			</div>
+			<div>
+				<label for="scynexis_investor_btn2_text"><strong>Button 2 Text:</strong></label>
+				<input type="text" id="scynexis_investor_btn2_text" name="investor_btn2_text" value="<?php echo esc_attr( $investor_btn2_text ); ?>" style="width: 100%;" placeholder="Latest Reports" />
+			</div>
+			<div>
+				<label for="scynexis_investor_btn2_link"><strong>Button 2 Link:</strong></label>
+				<input type="text" id="scynexis_investor_btn2_link" name="investor_btn2_link" value="<?php echo esc_attr( $investor_btn2_link ); ?>" style="width: 100%;" placeholder="#latest-reports" />
+			</div>
+		</div>
+
+		<h3 style="margin-top: 25px; margin-bottom: 10px; color: #1d2327;">Stock Card Details</h3>
+		<div style="background: #f6f7f7; padding: 15px; border-radius: 6px; border: 1px solid #dcdcde; max-width: 600px; margin-bottom: 20px;">
+			<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px;">
+				<div>
+					<label><strong>Ticker Symbol:</strong></label>
+					<input type="text" name="investor_ticker" value="<?php echo esc_attr( $investor_ticker ); ?>" style="width: 100%;" placeholder="SCYX" />
+				</div>
+				<div>
+					<label><strong>Stock Price ($):</strong></label>
+					<input type="text" name="investor_stock_price" value="<?php echo esc_attr( $investor_stock_price ); ?>" style="width: 100%;" placeholder="2.18" />
+				</div>
+				<div>
+					<label><strong>Daily Change:</strong></label>
+					<input type="text" name="investor_stock_change" value="<?php echo esc_attr( $investor_stock_change ); ?>" style="width: 100%;" placeholder="+3.81%" />
+				</div>
+			</div>
+			<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 10px;">
+				<div>
+					<label><strong>Market Cap:</strong></label>
+					<input type="text" name="investor_market_cap" value="<?php echo esc_attr( $investor_market_cap ); ?>" style="width: 100%;" placeholder="$84.2M" />
+				</div>
+				<div>
+					<label><strong>52-Week Range:</strong></label>
+					<input type="text" name="investor_range" value="<?php echo esc_attr( $investor_range ); ?>" style="width: 100%;" placeholder="$1.12 - $3.40" />
+				</div>
+				<div>
+					<label><strong>Volume:</strong></label>
+					<input type="text" name="investor_volume" value="<?php echo esc_attr( $investor_volume ); ?>" style="width: 100%;" placeholder="142K" />
+				</div>
+			</div>
+			<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+				<div>
+					<label><strong>Stock Button Text:</strong></label>
+					<input type="text" name="investor_stock_btn_text" value="<?php echo esc_attr( $investor_stock_btn_text ); ?>" style="width: 100%;" placeholder="View Stock Information" />
+				</div>
+				<div>
+					<label><strong>Stock Button Link:</strong></label>
+					<input type="text" name="investor_stock_btn_link" value="<?php echo esc_attr( $investor_stock_btn_link ); ?>" style="width: 100%;" placeholder="#stock-info" />
+				</div>
+			</div>
+		</div>
+
+		<!-- CTA BANNER SECTION SETTINGS -->
+		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">10. CTA Banner Settings</h2>
+		
+		<p style="margin-bottom: 15px;">
+			<label for="scynexis_cta_banner_subtitle"><strong>CTA Banner Subtitle (Pill):</strong></label><br />
+			<input type="text" id="scynexis_cta_banner_subtitle" name="cta_banner_subtitle" value="<?php echo esc_attr( $cta_banner_subtitle ); ?>" style="width: 100%; max-width: 600px;" placeholder="Partner With Us" />
+		</p>
+
+		<p style="margin-bottom: 15px;">
+			<label for="scynexis_cta_banner_title"><strong>CTA Banner Headline:</strong> (HTML like &lt;em&gt; supported)</label><br />
+			<input type="text" id="scynexis_cta_banner_title" name="cta_banner_title" value="<?php echo esc_attr( $cta_banner_title ); ?>" style="width: 100%; max-width: 600px;" placeholder="Advancing Science, &lt;em&gt;Improving Outcomes&lt;/em&gt;" />
+		</p>
+
+		<p style="margin-bottom: 15px;">
+			<label for="scynexis_cta_banner_desc"><strong>CTA Banner Description:</strong></label><br />
+			<textarea id="scynexis_cta_banner_desc" name="cta_banner_desc" rows="3" style="width: 100%; max-width: 600px;" placeholder="We collaborate with global leaders..."><?php echo esc_textarea( $cta_banner_desc ); ?></textarea>
+		</p>
+
+		<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 600px; margin-bottom: 25px;">
+			<div>
+				<label for="scynexis_cta_banner_btn_text"><strong>Button Text:</strong></label>
+				<input type="text" id="scynexis_cta_banner_btn_text" name="cta_banner_btn_text" value="<?php echo esc_attr( $cta_banner_btn_text ); ?>" style="width: 100%;" placeholder="Explore Partnerships" />
+			</div>
+			<div>
+				<label for="scynexis_cta_banner_btn_link"><strong>Button Link:</strong></label>
+				<input type="text" id="scynexis_cta_banner_btn_link" name="cta_banner_btn_link" value="<?php echo esc_attr( $cta_banner_btn_link ); ?>" style="width: 100%;" placeholder="#partnership" />
+			</div>
+		</div>
+
+		<!-- FAQ SECTION SETTINGS -->
+		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">11. FAQ Accordion Settings</h2>
+		
+		<p style="margin-bottom: 15px;">
+			<label for="scynexis_faq_subtitle"><strong>FAQ Subtitle (Pill):</strong></label><br />
+			<input type="text" id="scynexis_faq_subtitle" name="faq_subtitle" value="<?php echo esc_attr( $faq_subtitle ); ?>" style="width: 100%; max-width: 600px;" placeholder="FAQ" />
+		</p>
+
+		<p style="margin-bottom: 15px;">
+			<label for="scynexis_faq_title"><strong>FAQ Headline:</strong> (HTML like &lt;em&gt; supported)</label><br />
+			<input type="text" id="scynexis_faq_title" name="faq_title" value="<?php echo esc_attr( $faq_title ); ?>" style="width: 100%; max-width: 600px;" placeholder="Frequently Asked &lt;em&gt;Questions&lt;/em&gt;" />
+		</p>
+
+		<p style="margin-bottom: 15px;">
+			<label for="scynexis_faq_desc"><strong>FAQ Description:</strong></label><br />
+			<textarea id="scynexis_faq_desc" name="faq_desc" rows="3" style="width: 100%; max-width: 600px;" placeholder="Find answers to common questions about SCYNEXIS's..."><?php echo esc_textarea( $faq_desc ); ?></textarea>
+		</p>
+
 		<!-- NEWS SECTION SETTINGS -->
 		<h2 style="border-bottom: 2px solid #2271b1; padding-bottom: 10px; margin-bottom: 20px; margin-top: 40px; color: #1d2327;">8. Latest News Settings</h2>
 		
@@ -704,6 +857,29 @@ function scynexis_save_home_meta( $post_id ) {
 		'disease_c2_desc'      => '_disease_c2_desc',
 		'disease_c2_btn_text'  => '_disease_c2_btn_text',
 		'disease_c2_btn_link'  => '_disease_c2_btn_link',
+		'investor_subtitle'       => '_investor_subtitle',
+		'investor_title'          => '_investor_title',
+		'investor_desc'           => '_investor_desc',
+		'investor_btn1_text'      => '_investor_btn1_text',
+		'investor_btn1_link'      => '_investor_btn1_link',
+		'investor_btn2_text'      => '_investor_btn2_text',
+		'investor_btn2_link'      => '_investor_btn2_link',
+		'investor_ticker'         => '_investor_ticker',
+		'investor_stock_price'    => '_investor_stock_price',
+		'investor_stock_change'   => '_investor_stock_change',
+		'investor_market_cap'     => '_investor_market_cap',
+		'investor_range'          => '_investor_range',
+		'investor_volume'         => '_investor_volume',
+		'investor_stock_btn_text' => '_investor_stock_btn_text',
+		'investor_stock_btn_link' => '_investor_stock_btn_link',
+		'cta_banner_subtitle'     => '_cta_banner_subtitle',
+		'cta_banner_title'        => '_cta_banner_title',
+		'cta_banner_desc'         => '_cta_banner_desc',
+		'cta_banner_btn_text'     => '_cta_banner_btn_text',
+		'cta_banner_btn_link'     => '_cta_banner_btn_link',
+		'faq_subtitle'            => '_faq_subtitle',
+		'faq_title'               => '_faq_title',
+		'faq_desc'                => '_faq_desc',
 		'news_subtitle'        => '_news_subtitle',
 		'news_title'           => '_news_title',
 		'news_desc'            => '_news_desc',

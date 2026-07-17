@@ -456,6 +456,7 @@ body {
 }
 
 .site-footer .footer-container {
+    flex-direction: column;
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 40px;
@@ -1093,7 +1094,8 @@ body {
     flex-direction: column;
     gap: 40px;
     position: relative;
-    padding-bottom: 80px; /* Gives some scrolling breathing room */
+    padding-bottom: 80px;
+    /* Gives some scrolling breathing room */
 }
 
 /* Overlapping Sticky Stacking Cards */
@@ -1107,9 +1109,9 @@ body {
     border: 1px solid rgba(11, 36, 64, 0.05);
     box-shadow: 0 10px 30px rgba(11, 36, 64, 0.04);
     transition: transform 0.3s ease;
-    
+
     /* Each card stacks cleanly with a slight stacking gap from top */
-    top: 140px; 
+    top: 140px;
 }
 
 /* We add a custom overlay back shadow on hover to pop */
@@ -1200,7 +1202,7 @@ body {
         position: relative;
         top: auto;
     }
-    
+
     .pipeline-cards-col {
         padding-bottom: 0;
         gap: 28px;
@@ -1325,11 +1327,13 @@ body {
     padding: 4px 0;
 
     /* Hide scrollbars */
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .news-track::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none;
+    /* Chrome/Safari */
 }
 
 /* 3.5 Cards in View */
@@ -1423,7 +1427,7 @@ body {
     .news-section {
         padding: 80px 0;
     }
-    
+
     .news-header {
         flex-direction: column;
         align-items: flex-start;
@@ -1444,5 +1448,642 @@ body {
 
     .news-card {
         flex: 0 0 calc((100% - 16px) / 1.5);
+    }
+}
+
+
+/* Investor Relations Section */
+.investor-section {
+    position: relative;
+    width: 100%;
+    background-color: var(--color-bone);
+    padding: 120px 0;
+    border-top: 1px solid rgba(11, 36, 64, 0.08);
+}
+
+.investor-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.investor-grid {
+    display: grid;
+    grid-template-columns: 0.38fr 0.62fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* Glassmorphism Card Style */
+.stock-glass-card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 16px;
+    padding: 36px;
+    box-shadow: 0 20px 50px rgba(11, 36, 64, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stock-glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 30px 60px rgba(11, 36, 64, 0.1);
+}
+
+.stock-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.ticker-badge {
+    background-color: var(--color-navy);
+    color: #ffffff;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: var(--fs-sm);
+    letter-spacing: 0.5px;
+}
+
+.market-label {
+    color: var(--color-blue);
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+.stock-price-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 24px;
+}
+
+.price-row {
+    color: var(--color-navy);
+    font-family: var(--font-sans);
+}
+
+.stock-currency {
+    font-size: var(--fs-lg);
+    font-weight: 400;
+    vertical-align: super;
+    margin-right: 2px;
+}
+
+.stock-price-val {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stock-change {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: var(--fs-md);
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.stock-change.up {
+    color: #22C55E;
+    background-color: rgba(34, 197, 94, 0.1);
+}
+
+.stock-change.down {
+    color: #EF4444;
+    background-color: rgba(239, 68, 68, 0.1);
+}
+
+.stock-chart-wrapper {
+    margin-bottom: 28px;
+    border-bottom: 1px solid rgba(11, 36, 64, 0.08);
+    padding-bottom: 12px;
+}
+
+.sparkline-svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.stock-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.stat-item.span-2 {
+    grid-column: span 2;
+}
+
+.stat-lbl {
+    color: var(--color-gray);
+    font-size: var(--fs-xs);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-val {
+    color: var(--color-navy);
+    font-size: var(--fs-base);
+    font-weight: 700;
+}
+
+.stock-card-action .btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Right Column Details */
+.investor-subtitle {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-blue);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.investor-title {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--color-navy);
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.investor-title em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-copper);
+    font-weight: normal;
+}
+
+.investor-desc {
+    font-size: var(--fs-md);
+    line-height: 1.6;
+    color: var(--color-navy);
+    opacity: 0.9;
+    margin-bottom: 40px;
+}
+
+.investor-actions {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+/* Responsive Overrides */
+@media (max-width: 960px) {
+    .investor-section {
+        padding: 80px 0;
+    }
+
+    .investor-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .investor-stock-col {
+        max-width: 480px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .investor-container {
+        padding: 0 24px;
+    }
+
+    .investor-actions {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .investor-actions .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+/* CTA Banner Section (Height 700px, width 100%) */
+.cta-banner-section {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.cta-banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(11, 36, 64, 0.9) 0%, rgba(11, 36, 64, 0.6) 100%);
+    z-index: 1;
+}
+
+.cta-banner-container {
+    position: relative;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+    z-index: 2;
+}
+
+.cta-banner-content {
+    max-width: 720px;
+    display: flex;
+    flex-direction: column;
+}
+
+.cta-banner-subtitle {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-copper);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+}
+
+.cta-banner-title {
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.cta-banner-title em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-copper);
+    font-weight: normal;
+}
+
+.cta-banner-desc {
+    font-size: var(--fs-md);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 40px;
+}
+
+/* FAQ Section Styles (White background, two column sticky scroll) */
+.faq-section {
+    position: relative;
+    width: 100%;
+    background-color: #ffffff;
+    padding: 120px 0;
+    border-top: 1px solid rgba(11, 36, 64, 0.08);
+}
+
+.faq-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.faq-sticky-col {
+    position: sticky;
+    top: 120px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+}
+
+.faq-subtitle {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-blue);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.faq-title {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--color-navy);
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.faq-title em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-copper);
+    font-weight: normal;
+}
+
+.faq-desc {
+    font-size: var(--fs-md);
+    line-height: 1.6;
+    color: var(--color-navy);
+    opacity: 0.9;
+}
+
+/* Accordion Item Panel Styles */
+.faq-accordion-col {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(11, 36, 64, 0.1);
+    margin-bottom: 3rem;
+}
+
+.faq-item:last-child {
+    margin-bottom: 0;
+}
+
+.faq-trigger {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 0 0 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    outline: none;
+}
+
+.faq-question-text {
+    font-size: var(--fs-md);
+    font-weight: 700;
+    color: var(--color-navy);
+    transition: color 0.25s ease;
+    padding-right: 20px;
+}
+
+.faq-icon-indicator {
+    font-size: var(--fs-lg);
+    font-weight: 300;
+    color: var(--color-copper);
+    transition: transform 0.3s ease;
+    display: inline-block;
+    line-height: 1;
+}
+
+.faq-trigger:hover .faq-question-text {
+    color: var(--color-copper);
+}
+
+/* Expand Panel Transition height */
+.faq-answer-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-answer-inner {
+    padding-bottom: 30px;
+    color: rgba(11, 36, 64, 0.8);
+    line-height: 1.65;
+}
+
+.faq-item.open .faq-answer-panel {
+    max-height: 300px;
+    /* High enough to fit answers */
+}
+
+.faq-item.open .faq-icon-indicator {
+    transform: rotate(45deg);
+    /* Transforms '+' into 'x' */
+}
+
+/* Responsive FAQ overrides */
+@media (max-width: 960px) {
+    .cta-banner-section {
+        height: 600px;
+    }
+
+    .faq-section {
+        padding: 80px 0;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .faq-sticky-col {
+        position: relative;
+        top: auto;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .cta-banner-container,
+    .faq-container {
+        padding: 0 24px;
+    }
+
+    .faq-trigger {
+        padding: 24px 0;
+    }
+
+    .faq-question-text {
+        font-size: var(--fs-base);
+    }
+}
+
+
+/* Premium Custom Footer */
+.site-footer {
+    position: relative;
+    width: 100%;
+    background-color: var(--color-navy);
+    padding: 80px 0 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--color-bone);
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.footer-top-row {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 60px;
+}
+
+.footer-brand-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-logo-link {
+    display: block;
+    margin-bottom: 4px;
+}
+
+.footer-logo {
+    max-height: 100px;
+    width: auto;
+    display: block;
+    filter: brightness(0) invert(1);
+    /* Forces logo to white for dark navy contrast */
+}
+
+.footer-brand-tagline {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-copper);
+    margin-bottom: 20px;
+}
+
+.footer-brand-desc {
+    line-height: 1.6;
+    color: rgba(244, 241, 236, 0.65);
+    margin-bottom: 24px;
+    max-width: 320px;
+}
+
+.footer-ticker-badge {
+    align-self: flex-start;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+.footer-nav-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-nav-title {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--color-copper);
+    margin-bottom: 24px;
+    opacity: 0.95;
+}
+
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links-list a {
+    color: rgba(244, 241, 236, 0.65);
+    text-decoration: none;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    display: inline-block;
+}
+
+.footer-links-list a:hover {
+    color: var(--color-copper);
+    padding-left: 4px;
+}
+
+/* Bottom copyright & legal row */
+.footer-bottom-row {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgba(244, 241, 236, 0.45);
+    width: 100%;
+}
+
+.footer-legal-links {
+    display: flex;
+    gap: 24px;
+}
+
+.footer-legal-links a {
+    color: rgba(244, 241, 236, 0.45);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-legal-links a:hover {
+    color: #ffffff;
+}
+
+/* Responsive Footer overrides */
+@media (max-width: 900px) {
+    .footer-top-row {
+        grid-template-columns: 1.5fr 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        padding: 0 24px;
+    }
+
+    .footer-top-row {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .footer-bottom-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .footer-legal-links {
+        flex-wrap: wrap;
+        gap: 16px;
     }
 }
