@@ -8,11 +8,31 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+<?php
+// Fetch Frontpage metadata for navbar configuration
+$frontpage_id = get_option( 'page_on_front' );
+
+$logo_url = get_post_meta( $frontpage_id, '_navbar_logo', true );
+if ( empty( $logo_url ) ) {
+	$logo_url = get_template_directory_uri() . '/assets/images/logo.webp';
+}
+
+$cta_text = get_post_meta( $frontpage_id, '_navbar_cta_text', true );
+if ( empty( $cta_text ) ) {
+	$cta_text = 'Investor Relations >';
+}
+
+$cta_link = get_post_meta( $frontpage_id, '_navbar_cta_link', true );
+if ( empty( $cta_link ) ) {
+	$cta_link = '#console';
+}
+?>
+
 <div class="site-wrapper">
 	<header class="site-header">
 		<div class="nav-container">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-link">
-				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo.webp' ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo">
+				<img src="<?php echo esc_url( $logo_url ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="site-logo">
 			</a>
 			
 			<nav class="main-navigation" id="primary-menu">
@@ -24,7 +44,7 @@
 			</nav>
 			
 			<div class="nav-cta">
-				<a href="#console" class="btn-outline fs-sm">Investor Relations &gt;</a>
+				<a href="<?php echo esc_url( $cta_link ); ?>" class="btn-outline fs-sm"><?php echo esc_html( $cta_text ); ?></a>
 			</div>
 
 			<button class="menu-toggle" aria-label="Toggle Navigation">

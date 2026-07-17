@@ -23,5 +23,19 @@
 				}
 			});
 		}
+		// News Slider Navigation Scroll Handlers
+		var newsTrack = document.querySelector('.news-track');
+		var newsPrevBtn = document.querySelector('.news-nav-prev');
+		var newsNextBtn = document.querySelector('.news-nav-next');
+
+		if (newsTrack && newsPrevBtn && newsNextBtn) {
+			newsNextBtn.addEventListener('click', function() {
+				newsTrack.scrollBy({ left: 300, behavior: 'smooth' });
+			});
+
+			newsPrevBtn.addEventListener('click', function() {
+				newsTrack.scrollBy({ left: -300, behavior: 'smooth' });
+			});
+		}
 	});
 })();

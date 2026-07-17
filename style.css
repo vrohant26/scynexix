@@ -558,7 +558,6 @@ body {
 
 .metric-number {
     font-size: 3rem;
-    font-weight: 700;
     line-height: 1.1;
     color: var(--color-bone);
 }
@@ -672,5 +671,778 @@ body {
         flex-direction: column;
         gap: 12px;
         text-align: center;
+    }
+}
+
+/* Purpose Section */
+.purpose-section {
+    position: relative;
+    width: 100%;
+    background-color: var(--color-bone);
+    padding: 100px 0;
+    border-top: 1px solid rgba(11, 36, 64, 0.08);
+}
+
+.purpose-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.purpose-grid {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.purpose-media-col {
+    display: flex;
+    justify-content: center;
+    height: stretch;
+}
+
+.purpose-image-wrapper {
+    width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(11, 36, 64, 0.06);
+}
+
+.purpose-main-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.purpose-content-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.purpose-subtitle {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-blue);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.purpose-title {
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--color-navy);
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.purpose-title em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-copper);
+    font-weight: normal;
+}
+
+.purpose-desc {
+    font-size: var(--fs-md);
+    line-height: 1.6;
+    color: var(--color-navy);
+    opacity: 0.9;
+    margin-bottom: 36px;
+    border-bottom: 1px solid rgba(11, 36, 64, 0.1);
+    padding-bottom: 28px;
+}
+
+.purpose-metrics-row {
+    display: flex;
+    gap: 48px;
+    border-bottom: 1px solid rgba(11, 36, 64, 0.1);
+    padding-bottom: 28px;
+    margin-bottom: 32px;
+}
+
+.purpose-metric-item {
+    flex: 1;
+}
+
+.purpose-metric-val {
+    font-size: 2.85rem;
+    font-weight: 400;
+    color: var(--color-copper);
+    line-height: 1.1;
+}
+
+.purpose-metric-lbl {
+    font-size: var(--fs-xs);
+    font-weight: 500;
+    color: rgba(11, 36, 64, 0.75);
+    margin-top: 6px;
+}
+
+/* Outline CTA Button */
+.btn-outline-navy {
+    display: inline-block;
+    border: 2px solid var(--color-navy);
+    background: transparent;
+    color: var(--color-navy);
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-family: var(--font-sans);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+    text-align: center;
+    align-self: flex-start;
+}
+
+.btn-outline-navy:hover {
+    background-color: var(--color-navy);
+    color: #ffffff;
+}
+
+/* Responsive Rules for Purpose Section */
+@media (max-width: 1100px) {
+    .purpose-grid {
+        gap: 50px;
+        grid-template-columns: 1fr 1.1fr;
+    }
+
+    .purpose-image-wrapper {
+        height: 400px;
+    }
+}
+
+@media (max-width: 960px) {
+    .purpose-section {
+        padding: 80px 0;
+    }
+
+    .purpose-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .purpose-content-col {
+        text-align: left;
+        align-items: stretch;
+    }
+
+    .purpose-media-col {
+        order: -1;
+        /* Display image first on mobile/tablet */
+    }
+
+    .purpose-image-wrapper {
+        max-width: 600px;
+        height: 380px;
+    }
+}
+
+@media (max-width: 600px) {
+    .purpose-container {
+        padding: 0 24px;
+    }
+
+    .purpose-image-wrapper {
+        height: 280px;
+    }
+
+    .purpose-metrics-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+/* Disease Areas Section */
+.disease-section {
+    position: relative;
+    width: 100%;
+    background-color: var(--color-navy);
+    padding: 120px 0;
+    border-top: 1px solid rgba(11, 36, 64, 0.08);
+    color: #ffffff;
+}
+
+.disease-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.disease-header {
+    max-width: 780px;
+    margin: 0 auto 64px auto;
+    text-align: center;
+}
+
+.disease-subtitle {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: #fff;
+    /* Use bright blue accent for pill text */
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.disease-title {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: #ffffff;
+    /* White title text */
+    margin-bottom: 24px;
+    letter-spacing: -0.5px;
+}
+
+.disease-title em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-copper);
+    font-weight: normal;
+}
+
+.disease-desc {
+    font-size: var(--fs-md);
+    line-height: 1.6;
+    color: #ffffff;
+    /* White description text */
+    opacity: 0.9;
+}
+
+.disease-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.disease-card {
+    background-color: var(--color-bone);
+    padding: 48px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid rgba(11, 36, 64, 0.04);
+    box-shadow: 0 4px 20px rgba(11, 36, 64, 0.02);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.disease-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 35px rgba(11, 36, 64, 0.06);
+    border-color: rgba(226, 105, 31, 0.15);
+    /* light copper border on hover */
+}
+
+.disease-card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: 16px;
+}
+
+.disease-card-desc {
+    font-size: var(--fs-base);
+    line-height: 1.65;
+    color: rgba(11, 36, 64, 0.8);
+    margin-bottom: 32px;
+    flex: 1;
+    /* Pushes button to bottom so cards are equal height */
+}
+
+.disease-card-link {
+    color: var(--color-navy);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid var(--color-navy);
+    padding-bottom: 4px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.disease-card-link:hover {
+    color: var(--color-copper);
+    border-color: var(--color-copper);
+}
+
+.disease-card-link .arrow {
+    transition: transform 0.2s ease;
+}
+
+.disease-card-link:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* Responsive Rules for Disease Section */
+@media (max-width: 900px) {
+    .disease-section {
+        padding: 80px 0;
+    }
+
+    .disease-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .disease-card {
+        padding: 36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .disease-container {
+        padding: 0 24px;
+    }
+
+    .disease-header {
+        margin-bottom: 40px;
+    }
+}
+
+
+/* Pipeline Section - Sticky Scroll Stacking Cards */
+.pipeline-section {
+    position: relative;
+    width: 100%;
+    background-color: var(--color-bone);
+    padding: 120px 0;
+    border-top: 1px solid rgba(11, 36, 64, 0.08);
+}
+
+.pipeline-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.pipeline-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 80px;
+    align-items: start;
+}
+
+.pipeline-sticky-col {
+    position: sticky;
+    top: 120px;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
+}
+
+.pipeline-subtitle {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-blue);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.pipeline-title {
+    font-size: clamp(2.25rem, 5vw, 3.25rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: var(--color-navy);
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.pipeline-title em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-copper);
+    font-weight: normal;
+}
+
+.pipeline-desc {
+    font-size: var(--fs-md);
+    line-height: 1.6;
+    color: var(--color-navy);
+    opacity: 0.95;
+    margin-bottom: 24px;
+}
+
+.pipeline-intro-body {
+    font-size: var(--fs-base);
+    line-height: 1.65;
+    color: var(--color-navy);
+    opacity: 0.8;
+    margin-bottom: 36px;
+}
+
+.pipeline-actions {
+    display: flex;
+    align-items: center;
+}
+
+/* Cards Stacking Track */
+.pipeline-cards-col {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    position: relative;
+    padding-bottom: 80px; /* Gives some scrolling breathing room */
+}
+
+/* Overlapping Sticky Stacking Cards */
+.pipeline-card {
+    position: sticky;
+    background-color: #ffffff;
+    padding: 48px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(11, 36, 64, 0.05);
+    box-shadow: 0 10px 30px rgba(11, 36, 64, 0.04);
+    transition: transform 0.3s ease;
+    
+    /* Each card stacks cleanly with a slight stacking gap from top */
+    top: 140px; 
+}
+
+/* We add a custom overlay back shadow on hover to pop */
+.pipeline-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(11, 36, 64, 0.08);
+}
+
+/* Status Badges */
+.pipeline-badge {
+    align-self: flex-start;
+    padding: 6px 14px;
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 24px;
+    border-radius: 4px;
+}
+
+.badge-clinical {
+    background-color: #EBF8FF;
+    color: #2B6CB0;
+}
+
+.badge-preclinical {
+    background-color: #EDF2F7;
+    color: #4A5568;
+}
+
+.badge-approved {
+    background-color: #E6FFFA;
+    color: #234E52;
+}
+
+.pipeline-card-icon {
+    width: 56px;
+    height: 56px;
+    margin-bottom: 24px;
+}
+
+.pipeline-card-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.pipeline-card-title {
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--color-navy);
+    margin-bottom: 8px;
+}
+
+.pipeline-card-subtitle {
+    color: var(--color-copper);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+}
+
+.pipeline-card-divider {
+    width: 40px;
+    height: 2px;
+    background-color: rgba(11, 36, 64, 0.1);
+    margin-bottom: 24px;
+}
+
+.pipeline-card-desc {
+    font-size: var(--fs-sm);
+    line-height: 1.6;
+    color: rgba(11, 36, 64, 0.8);
+}
+
+/* Responsive Rules for Pipeline Stacking */
+@media (max-width: 960px) {
+    .pipeline-section {
+        padding: 80px 0;
+    }
+
+    .pipeline-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .pipeline-sticky-col {
+        position: relative;
+        top: auto;
+    }
+    
+    .pipeline-cards-col {
+        padding-bottom: 0;
+        gap: 28px;
+    }
+
+    .pipeline-card {
+        position: relative;
+        top: auto;
+        padding: 36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .pipeline-container {
+        padding: 0 24px;
+    }
+
+    .pipeline-card {
+        padding: 28px;
+    }
+}
+
+
+/* Latest News Section */
+.news-section {
+    position: relative;
+    width: 100%;
+    background-color: var(--color-navy);
+    padding: 120px 0;
+    color: #ffffff;
+}
+
+.news-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 40px;
+    width: 100%;
+}
+
+.news-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    gap: 40px;
+}
+
+.news-header-content {
+    max-width: 700px;
+}
+
+.news-subtitle {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-copper);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.news-title {
+    font-size: clamp(2rem, 4.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.15;
+    color: #ffffff;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.news-title em {
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-copper);
+    font-weight: normal;
+}
+
+.news-desc {
+    font-size: var(--fs-md);
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+/* Slider Controls */
+.news-slider-nav {
+    display: flex;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.news-slider-nav button {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    width: 48px;
+    height: 48px;
+    font-size: var(--fs-md);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.news-slider-nav button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Slider Track */
+.news-slider-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.news-track {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding: 4px 0;
+
+    /* Hide scrollbars */
+    scrollbar-width: none; /* Firefox */
+}
+
+.news-track::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+/* 3.5 Cards in View */
+.news-card {
+    flex: 0 0 calc((100% - 60px) / 3.5);
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 32px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #ffffff;
+    min-height: 200px;
+    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.news-card:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+.news-card-date {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    color: var(--color-copper);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.news-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.45;
+    color: #ffffff;
+    flex: 1;
+    margin-bottom: 20px;
+}
+
+.news-card-cta {
+    font-family: var(--font-mono);
+    font-size: var(--fs-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: auto;
+    transition: color 0.2s ease;
+}
+
+.news-card:hover .news-card-cta {
+    color: var(--color-copper);
+}
+
+/* View All Button (Outline Light) */
+.btn-outline-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.btn-outline-light:hover {
+    background-color: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.news-footer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Responsive Rules for News Section */
+@media (max-width: 1100px) {
+    .news-card {
+        flex: 0 0 calc((100% - 40px) / 3.5);
+    }
+}
+
+@media (max-width: 900px) {
+    .news-section {
+        padding: 80px 0;
+    }
+    
+    .news-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .news-card {
+        flex: 0 0 calc((100% - 24px) / 2.5);
+        padding: 24px;
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 600px) {
+    .news-container {
+        padding: 0 24px;
+    }
+
+    .news-card {
+        flex: 0 0 calc((100% - 16px) / 1.5);
     }
 }
