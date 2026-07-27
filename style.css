@@ -1556,7 +1556,7 @@ body {
 }
 
 .stock-price-val {
-    font-size: 3.5rem;
+    font-size: 1rem;
     font-weight: 700;
     line-height: 1;
 }
@@ -2230,6 +2230,7 @@ body {
     .top-bar-arrow {
         display: none !important;
     }
+
     .top-bar-item {
         display: flex !important;
     }
@@ -2239,12 +2240,15 @@ body {
     .top-bar-ticker {
         padding: 8px 0;
     }
+
     .top-bar-container {
         padding: 0 16px;
     }
+
     .top-bar-divider {
         display: none !important;
     }
+
     .top-bar-item {
         display: none !important;
         text-align: center;
@@ -2252,10 +2256,12 @@ body {
         flex-direction: column;
         gap: 4px;
     }
+
     .top-bar-item.active {
         display: flex !important;
         animation: topBarFade 0.3s ease;
     }
+
     .top-bar-item.btn-item {
         align-items: center;
         justify-content: center;
@@ -2263,6 +2269,13 @@ body {
 }
 
 @keyframes topBarFade {
-    from { opacity: 0; transform: translateY(2px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(2px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
