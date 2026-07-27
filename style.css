@@ -108,7 +108,7 @@ body {
 }
 
 .nav-container {
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
     display: flex;
@@ -214,7 +214,7 @@ body {
 }
 
 .hero-split {
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 100px 40px;
     width: 100%;
@@ -457,7 +457,7 @@ body {
 
 .site-footer .footer-container {
     flex-direction: column;
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
     display: flex;
@@ -487,7 +487,7 @@ body {
 }
 
 .about-container {
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
     width: 100%;
@@ -685,7 +685,7 @@ body {
 }
 
 .purpose-container {
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
 }
@@ -870,7 +870,7 @@ body {
 }
 
 .disease-container {
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
 }
@@ -1021,7 +1021,7 @@ body {
 }
 
 .pipeline-container {
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
     width: 100%;
@@ -1236,7 +1236,7 @@ body {
 }
 
 .news-container {
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
     width: 100%;
@@ -1462,7 +1462,7 @@ body {
 }
 
 .investor-container {
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
     width: 100%;
@@ -1708,7 +1708,7 @@ body {
 
 .cta-banner-container {
     position: relative;
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
     width: 100%;
@@ -1763,7 +1763,7 @@ body {
 }
 
 .faq-container {
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
     width: 100%;
@@ -1938,7 +1938,7 @@ body {
 }
 
 .footer-container {
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 0 40px;
     width: 100%;
