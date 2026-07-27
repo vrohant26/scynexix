@@ -14,7 +14,7 @@ $frontpage_id = get_option( 'page_on_front' );
 
 $logo_url = get_post_meta( $frontpage_id, '_navbar_logo', true );
 if ( empty( $logo_url ) ) {
-	$logo_url = get_template_directory_uri() . '/assets/images/logo.webp';
+	$logo_url = get_template_directory_uri() . '/assets/images/new-logo.png';
 }
 
 $cta_text = get_post_meta( $frontpage_id, '_navbar_cta_text', true );

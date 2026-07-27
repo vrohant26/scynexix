@@ -24,7 +24,7 @@ Text Domain: scynexis
     --font-mono: 'Consolas', 'Courier New', Courier, monospace;
 
     /* Font Sizes */
-    --fs-xs: 0.875rem;
+    --fs-xs: 1rem;
     /* 14px */
     --fs-sm: 1rem;
     /* 16px */
@@ -103,7 +103,7 @@ body {
     width: 100%;
     z-index: 100;
     background-color: var(--color-bone);
-    padding: 0px 0 24px;
+    padding: 24px 0px;
     border-bottom: 1px solid var(--color-border);
 }
 
@@ -129,7 +129,7 @@ body {
 }
 
 .site-logo {
-    height: 5.25rem;
+    height: 4rem;
     width: auto;
     display: block;
 }
