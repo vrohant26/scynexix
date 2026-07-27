@@ -512,8 +512,8 @@ body {
 }
 
 .about-pill .pill-dot {
-    width: 8px;
-    height: 8px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: var(--color-copper);
     box-shadow: 0 0 6px var(--color-copper);
@@ -521,9 +521,10 @@ body {
 
 .about-pill .pill-text {
     font-family: var(--font-sans);
+    font-size: 1.15rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     color: rgba(244, 241, 236, 0.85);
 }
 
@@ -723,10 +724,10 @@ body {
 
 .purpose-subtitle {
     font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-size: 1.15rem;
     color: var(--color-blue);
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 3.5px;
     margin-bottom: 20px;
 }
 
@@ -883,11 +884,11 @@ body {
 
 .disease-subtitle {
     font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-size: 1.15rem;
     color: #fff;
     /* Use bright blue accent for pill text */
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 3.5px;
     margin-bottom: 20px;
 }
 
@@ -1044,10 +1045,10 @@ body {
 
 .pipeline-subtitle {
     font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-size: 1.15rem;
     color: var(--color-blue);
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 3.5px;
     margin-bottom: 20px;
 }
 
@@ -1275,10 +1276,10 @@ body {
 
 .news-subtitle {
     font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-size: 1.15rem;
     color: var(--color-copper);
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 3.5px;
     margin-bottom: 20px;
 }
 
@@ -1631,10 +1632,10 @@ body {
 /* Right Column Details */
 .investor-subtitle {
     font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-size: 1.15rem;
     color: var(--color-blue);
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 3.5px;
     margin-bottom: 20px;
 }
 
@@ -1742,10 +1743,10 @@ body {
 
 .cta-banner-subtitle {
     font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-size: 1.15rem;
     color: var(--color-copper);
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 3.5px;
     margin-bottom: 24px;
 }
 
@@ -1805,10 +1806,10 @@ body {
 
 .faq-subtitle {
     font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-size: 1.15rem;
     color: var(--color-blue);
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 3.5px;
     margin-bottom: 20px;
 }
 
