@@ -26,9 +26,86 @@ $cta_link = get_post_meta( $frontpage_id, '_navbar_cta_link', true );
 if ( empty( $cta_link ) ) {
 	$cta_link = '#console';
 }
+
+// Fetch Top Ticker metadata
+$ticker_price = get_post_meta( $frontpage_id, '_ticker_price', true );
+if ( empty( $ticker_price ) ) {
+	$ticker_price = '0.84'; // Default price value
+}
+
+$ticker_change = get_post_meta( $frontpage_id, '_ticker_change', true );
+if ( empty( $ticker_change ) ) {
+	$ticker_change = '+0.03 (+3.7%)';
+}
+
+$ticker_cash = get_post_meta( $frontpage_id, '_ticker_cash', true );
+if ( empty( $ticker_cash ) ) {
+	$ticker_cash = '~$43.0M';
+}
+
+$ticker_runway = get_post_meta( $frontpage_id, '_ticker_runway', true );
+if ( empty( $ticker_runway ) ) {
+	$ticker_runway = 'mid-2029';
+}
+
+$ticker_btn_text = get_post_meta( $frontpage_id, '_ticker_btn_text', true );
+if ( empty( $ticker_btn_text ) ) {
+	$ticker_btn_text = 'Investors Hub';
+}
+
+$ticker_btn_link = get_post_meta( $frontpage_id, '_ticker_btn_link', true );
+if ( empty( $ticker_btn_link ) ) {
+	$ticker_btn_link = '#investors';
+}
 ?>
 
 <div class="site-wrapper">
+	<!-- TOP TICKER NAVBAR -->
+	<div class="top-ticker-navbar">
+		<div class="ticker-container">
+			<button class="ticker-nav-btn prev-btn" aria-label="Previous Ticker Section">
+				<svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+			</button>
+			
+			<div class="ticker-items-wrapper">
+				<div class="ticker-column">
+					<span class="ticker-label">NASDAQ / LAST</span>
+					<div class="ticker-value">
+						<span class="stock-currency">$</span><span class="stock-price-val"><?php echo esc_html( $ticker_price ); ?></span>
+						<span class="stock-change up">
+							<span class="change-indicator">&uarr;</span>
+							<span class="change-val"><?php echo esc_html( $ticker_change ); ?></span>
+						</span>
+					</div>
+				</div>
+				
+				<div class="ticker-divider"></div>
+				
+				<div class="ticker-column">
+					<span class="ticker-label">CASH</span>
+					<div class="ticker-value font-serif"><?php echo esc_html( $ticker_cash ); ?></div>
+				</div>
+				
+				<div class="ticker-divider"></div>
+				
+				<div class="ticker-column">
+					<span class="ticker-label">RUNWAY</span>
+					<div class="ticker-value font-serif"><?php echo esc_html( $ticker_runway ); ?></div>
+				</div>
+				
+				<div class="ticker-divider"></div>
+				
+				<div class="ticker-column btn-col">
+					<a href="<?php echo esc_url( $ticker_btn_link ); ?>" class="ticker-btn"><?php echo esc_html( $ticker_btn_text ); ?></a>
+				</div>
+			</div>
+			
+			<button class="ticker-nav-btn next-btn" aria-label="Next Ticker Section">
+				<svg viewBox="0 0 24 24" width="18" height="18" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+			</button>
+		</div>
+	</div>
+
 	<header class="site-header">
 		<div class="nav-container">
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logo-link">

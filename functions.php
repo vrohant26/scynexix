@@ -99,6 +99,14 @@ function scynexis_render_home_metabox( $post ) {
 	$navbar_cta_text = get_post_meta( $post->ID, '_navbar_cta_text', true );
 	$navbar_cta_link = get_post_meta( $post->ID, '_navbar_cta_link', true );
 
+	// Retrieve Ticker metadata
+	$ticker_price    = get_post_meta( $post->ID, '_ticker_price', true );
+	$ticker_change   = get_post_meta( $post->ID, '_ticker_change', true );
+	$ticker_cash     = get_post_meta( $post->ID, '_ticker_cash', true );
+	$ticker_runway   = get_post_meta( $post->ID, '_ticker_runway', true );
+	$ticker_btn_text = get_post_meta( $post->ID, '_ticker_btn_text', true );
+	$ticker_btn_link = get_post_meta( $post->ID, '_ticker_btn_link', true );
+
 	// Retrieve Hero metadata
 	$prefix         = get_post_meta( $post->ID, '_meta_prefix', true );
 	$hero_title     = get_post_meta( $post->ID, '_hero_title', true );
@@ -241,6 +249,35 @@ function scynexis_render_home_metabox( $post ) {
 			<div>
 				<label for="scynexis_navbar_cta_link"><strong>CTA Button Link:</strong></label>
 				<input type="text" id="scynexis_navbar_cta_link" name="navbar_cta_link" value="<?php echo esc_attr( $navbar_cta_link ); ?>" style="width: 100%;" placeholder="#console" />
+			</div>
+		</div>
+
+		<!-- TOP TICKER SETTINGS -->
+		<h3 style="margin-top: 30px; margin-bottom: 15px; color: #23282d; border-bottom: 1px solid #ddd; padding-bottom: 5px;">Top Ticker Navbar Settings</h3>
+		<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; max-width: 600px; margin-bottom: 25px;">
+			<div>
+				<label for="scynexis_ticker_price"><strong>NASDAQ Price (e.g. $0.84):</strong></label>
+				<input type="text" id="scynexis_ticker_price" name="ticker_price" value="<?php echo esc_attr( $ticker_price ); ?>" style="width: 100%;" placeholder="$0.84" />
+			</div>
+			<div>
+				<label for="scynexis_ticker_change"><strong>NASDAQ Change (e.g. +0.03 (+3.7%)):</strong></label>
+				<input type="text" id="scynexis_ticker_change" name="ticker_change" value="<?php echo esc_attr( $ticker_change ); ?>" style="width: 100%;" placeholder="+0.03 (+3.7%)" />
+			</div>
+			<div>
+				<label for="scynexis_ticker_cash"><strong>Cash runway/amount (e.g. ~$43.0M):</strong></label>
+				<input type="text" id="scynexis_ticker_cash" name="ticker_cash" value="<?php echo esc_attr( $ticker_cash ); ?>" style="width: 100%;" placeholder="~$43.0M" />
+			</div>
+			<div>
+				<label for="scynexis_ticker_runway"><strong>Runway Period (e.g. mid-2029):</strong></label>
+				<input type="text" id="scynexis_ticker_runway" name="ticker_runway" value="<?php echo esc_attr( $ticker_runway ); ?>" style="width: 100%;" placeholder="mid-2029" />
+			</div>
+			<div>
+				<label for="scynexis_ticker_btn_text"><strong>Button Text (e.g. Investors Hub):</strong></label>
+				<input type="text" id="scynexis_ticker_btn_text" name="ticker_btn_text" value="<?php echo esc_attr( $ticker_btn_text ); ?>" style="width: 100%;" placeholder="Investors Hub" />
+			</div>
+			<div>
+				<label for="scynexis_ticker_btn_link"><strong>Button Link:</strong></label>
+				<input type="text" id="scynexis_ticker_btn_link" name="ticker_btn_link" value="<?php echo esc_attr( $ticker_btn_link ); ?>" style="width: 100%;" placeholder="#investors" />
 			</div>
 		</div>
 
@@ -828,6 +865,12 @@ function scynexis_save_home_meta( $post_id ) {
 		'navbar_logo'          => '_navbar_logo',
 		'navbar_cta_text'      => '_navbar_cta_text',
 		'navbar_cta_link'      => '_navbar_cta_link',
+		'ticker_price'         => '_ticker_price',
+		'ticker_change'        => '_ticker_change',
+		'ticker_cash'          => '_ticker_cash',
+		'ticker_runway'        => '_ticker_runway',
+		'ticker_btn_text'      => '_ticker_btn_text',
+		'ticker_btn_link'      => '_ticker_btn_link',
 		'meta_prefix'          => '_meta_prefix',
 		'hero_title'           => '_hero_title',
 		'hero_desc'            => '_hero_desc',

@@ -24,14 +24,13 @@
 			});
 		}
 		// Simulated Ticker Live Updates
-		var stockPriceEl = document.querySelector('.stock-price-val');
-		var stockChangeEl = document.querySelector('.stock-change');
-		var changeValEl = document.querySelector('.stock-change .change-val');
-		var indicatorEl = document.querySelector('.stock-change .change-indicator');
+		var stockPriceEls = document.querySelectorAll('.stock-price-val');
+		var stockChangeEls = document.querySelectorAll('.stock-change');
 
-		if (stockPriceEl && stockChangeEl) {
-			var basePrice = parseFloat(stockPriceEl.textContent);
-			var initialPercent = parseFloat(changeValEl.textContent) || 1.00; // Base change parsed dynamically
+		if (stockPriceEls.length > 0 && stockChangeEls.length > 0) {
+			var basePrice = parseFloat(stockPriceEls[0].textContent);
+			var changeValElFirst = stockChangeEls[0].querySelector('.change-val');
+			var initialPercent = changeValElFirst ? parseFloat(changeValElFirst.textContent) : 3.7; // Base change parsed dynamically
 
 			setInterval(function() {
 				// Random minor price fluctuation between -$0.02 and +$0.02
@@ -39,19 +38,24 @@
 				basePrice += delta;
 				
 				// Format to 2 decimal places
-				stockPriceEl.textContent = basePrice.toFixed(2);
+				var formattedPrice = basePrice.toFixed(2);
+				stockPriceEls.forEach(function(el) {
+					el.textContent = formattedPrice;
+				});
 				
 				// Update percentage change slightly
 				var changePercent = initialPercent + (delta * 2.2); // Adjust multiplier for realistic fluctuation
-				if (changePercent < 0) {
-					stockChangeEl.className = 'stock-change down';
-					indicatorEl.innerHTML = '&darr;';
-					changeValEl.textContent = changePercent.toFixed(2) + '%';
-				} else {
-					stockChangeEl.className = 'stock-change up';
-					indicatorEl.innerHTML = '&uarr;';
-					changeValEl.textContent = '+' + changePercent.toFixed(2) + '%';
-				}
+				var isDown = changePercent < 0;
+				var formattedPercent = (isDown ? '' : '+') + changePercent.toFixed(2) + '%';
+				var indicatorHTML = isDown ? '&darr;' : '&uarr;';
+
+				stockChangeEls.forEach(function(changeEl) {
+					changeEl.className = 'stock-change ' + (isDown ? 'down' : 'up');
+					var ind = changeEl.querySelector('.change-indicator');
+					var val = changeEl.querySelector('.change-val');
+					if (ind) ind.innerHTML = indicatorHTML;
+					if (val) val.textContent = formattedPercent;
+				});
 			}, 4000);
 		}
 
