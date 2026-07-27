@@ -26,37 +26,72 @@
 		// Simulated Ticker Live Updates
 		var stockPriceEls = document.querySelectorAll('.stock-price-val');
 		var stockChangeEls = document.querySelectorAll('.stock-change');
+		var changeValEls = document.querySelectorAll('.change-val');
+		var indicatorEls = document.querySelectorAll('.change-indicator');
 
 		if (stockPriceEls.length > 0 && stockChangeEls.length > 0) {
 			var basePrice = parseFloat(stockPriceEls[0].textContent);
-			var changeValElFirst = stockChangeEls[0].querySelector('.change-val');
-			var initialPercent = changeValElFirst ? parseFloat(changeValElFirst.textContent) : 3.7; // Base change parsed dynamically
+			var initialPercent = parseFloat(changeValEls[0].textContent) || 1.00;
 
 			setInterval(function() {
 				// Random minor price fluctuation between -$0.02 and +$0.02
 				var delta = (Math.random() * 0.04 - 0.02);
 				basePrice += delta;
 				
-				// Format to 2 decimal places
 				var formattedPrice = basePrice.toFixed(2);
+				var changePercent = initialPercent + (delta * 2.2);
+				var formattedPercent = (changePercent < 0 ? '' : '+') + changePercent.toFixed(2) + '%';
+				var isUp = changePercent >= 0;
+
 				stockPriceEls.forEach(function(el) {
 					el.textContent = formattedPrice;
 				});
-				
-				// Update percentage change slightly
-				var changePercent = initialPercent + (delta * 2.2); // Adjust multiplier for realistic fluctuation
-				var isDown = changePercent < 0;
-				var formattedPercent = (isDown ? '' : '+') + changePercent.toFixed(2) + '%';
-				var indicatorHTML = isDown ? '&darr;' : '&uarr;';
 
-				stockChangeEls.forEach(function(changeEl) {
-					changeEl.className = 'stock-change ' + (isDown ? 'down' : 'up');
-					var ind = changeEl.querySelector('.change-indicator');
-					var val = changeEl.querySelector('.change-val');
-					if (ind) ind.innerHTML = indicatorHTML;
-					if (val) val.textContent = formattedPercent;
+				stockChangeEls.forEach(function(el) {
+					el.className = 'stock-change ' + (isUp ? 'up' : 'down');
+				});
+
+				indicatorEls.forEach(function(el) {
+					el.innerHTML = isUp ? '&uarr;' : '&darr;';
+				});
+
+				changeValEls.forEach(function(el) {
+					el.textContent = formattedPercent;
 				});
 			}, 4000);
+		}
+
+		// Top Bar Slider on Mobile
+		var topBarItems = document.querySelectorAll('.top-bar-ticker .top-bar-item');
+		var topBarPrev = document.querySelector('.top-bar-arrow.prev');
+		var topBarNext = document.querySelector('.top-bar-arrow.next');
+
+		if (topBarItems.length > 0 && topBarPrev && topBarNext) {
+			var currentSlide = 0;
+
+			// Initialize first item as active
+			topBarItems[currentSlide].classList.add('active');
+
+			function showSlide(index) {
+				topBarItems[currentSlide].classList.remove('active');
+				currentSlide = (index + topBarItems.length) % topBarItems.length;
+				topBarItems[currentSlide].classList.add('active');
+			}
+
+			topBarPrev.addEventListener('click', function() {
+				showSlide(currentSlide - 1);
+			});
+
+			topBarNext.addEventListener('click', function() {
+				showSlide(currentSlide + 1);
+			});
+
+			// Auto slide every 5 seconds on mobile
+			setInterval(function() {
+				if (window.innerWidth <= 768) {
+					showSlide(currentSlide + 1);
+				}
+			}, 5000);
 		}
 
 		// News Slider Navigation Scroll Handlers

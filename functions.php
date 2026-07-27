@@ -272,8 +272,8 @@ function scynexis_render_home_metabox( $post ) {
 				<input type="text" id="scynexis_ticker_runway" name="ticker_runway" value="<?php echo esc_attr( $ticker_runway ); ?>" style="width: 100%;" placeholder="mid-2029" />
 			</div>
 			<div>
-				<label for="scynexis_ticker_btn_text"><strong>Button Text (e.g. Investors Hub):</strong></label>
-				<input type="text" id="scynexis_ticker_btn_text" name="ticker_btn_text" value="<?php echo esc_attr( $ticker_btn_text ); ?>" style="width: 100%;" placeholder="Investors Hub" />
+				<label for="scynexis_ticker_btn_text"><strong>Button Text (e.g. Investors):</strong></label>
+				<input type="text" id="scynexis_ticker_btn_text" name="ticker_btn_text" value="<?php echo esc_attr( $ticker_btn_text ); ?>" style="width: 100%;" placeholder="Investors" />
 			</div>
 			<div>
 				<label for="scynexis_ticker_btn_link"><strong>Button Link:</strong></label>
