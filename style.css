@@ -15,7 +15,7 @@ Text Domain: scynexis
     --color-blue: #1E5470;
     --color-bright: #2D7AA8;
     --color-copper: #E2691F;
-    --color-bone: #F4F1EC;
+    --color-bone: #ffffff;
     --color-gray: #6B6B6B;
     --color-border: #d6d6d6;
 
@@ -1101,17 +1101,35 @@ body {
 /* Overlapping Sticky Stacking Cards */
 .pipeline-card {
     position: sticky;
-    background-color: #ffffff;
+    background-color: var(--color-navy);
+    color: #ffffff;
     padding: 48px;
     border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid rgba(11, 36, 64, 0.05);
-    box-shadow: 0 10px 30px rgba(11, 36, 64, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
     /* Each card stacks cleanly with a slight stacking gap from top */
     top: 140px;
+}
+
+.pipeline-card:nth-child(1) {
+    background-image: linear-gradient(rgba(11, 36, 64, 0.88), rgba(11, 36, 64, 0.88)), url('assets/images/pipeline-bg-kidney.png');
+}
+
+.pipeline-card:nth-child(2) {
+    background-image: linear-gradient(rgba(11, 36, 64, 0.88), rgba(11, 36, 64, 0.88)), url('assets/images/pipeline-bg-cell.png');
+}
+
+.pipeline-card:nth-child(3) {
+    background-image: linear-gradient(rgba(11, 36, 64, 0.88), rgba(11, 36, 64, 0.88)), url('assets/images/pipeline-bg-molecule.png');
+}
+
+.pipeline-card:nth-child(4) {
+    background-image: linear-gradient(rgba(11, 36, 64, 0.88), rgba(11, 36, 64, 0.88)), url('assets/images/pipeline-bg-capsule.png');
 }
 
 /* We add a custom overlay back shadow on hover to pop */
@@ -1162,7 +1180,7 @@ body {
 .pipeline-card-title {
     font-size: 2.15rem;
     font-weight: 700;
-    color: var(--color-navy);
+    color: #ffffff;
     margin-bottom: 8px;
 }
 
@@ -1177,14 +1195,14 @@ body {
 .pipeline-card-divider {
     width: 40px;
     height: 2px;
-    background-color: rgba(11, 36, 64, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
     margin-bottom: 24px;
 }
 
 .pipeline-card-desc {
     font-size: var(--fs-sm);
     line-height: 1.6;
-    color: rgba(11, 36, 64, 0.8);
+    color: rgba(255, 255, 255, 0.85);
 }
 
 /* Responsive Rules for Pipeline Stacking */
