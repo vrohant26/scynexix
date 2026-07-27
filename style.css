@@ -521,7 +521,7 @@ body {
 
 .about-pill .pill-text {
     font-family: var(--font-sans);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -724,7 +724,7 @@ body {
 
 .purpose-subtitle {
     font-family: var(--font-mono);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--color-blue);
     text-transform: uppercase;
     letter-spacing: 3.5px;
@@ -884,7 +884,7 @@ body {
 
 .disease-subtitle {
     font-family: var(--font-mono);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: #fff;
     /* Use bright blue accent for pill text */
     text-transform: uppercase;
@@ -1045,7 +1045,7 @@ body {
 
 .pipeline-subtitle {
     font-family: var(--font-mono);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--color-blue);
     text-transform: uppercase;
     letter-spacing: 3.5px;
@@ -1276,7 +1276,7 @@ body {
 
 .news-subtitle {
     font-family: var(--font-mono);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--color-copper);
     text-transform: uppercase;
     letter-spacing: 3.5px;
@@ -1632,7 +1632,7 @@ body {
 /* Right Column Details */
 .investor-subtitle {
     font-family: var(--font-mono);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--color-blue);
     text-transform: uppercase;
     letter-spacing: 3.5px;
@@ -1743,7 +1743,7 @@ body {
 
 .cta-banner-subtitle {
     font-family: var(--font-mono);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--color-copper);
     text-transform: uppercase;
     letter-spacing: 3.5px;
@@ -1806,7 +1806,7 @@ body {
 
 .faq-subtitle {
     font-family: var(--font-mono);
-    font-size: 1.15rem;
+    font-size: 1.2rem;
     color: var(--color-blue);
     text-transform: uppercase;
     letter-spacing: 3.5px;
