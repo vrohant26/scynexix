@@ -538,21 +538,21 @@ body {
 
 .about-metrics-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     padding: 48px 0;
-    margin-bottom: 12px;
+    margin-bottom: 24px;
 }
 
 .metric-column {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
     background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-left: 3.5px solid var(--color-copper);
-    padding: 22px 28px;
+    border-left: 4px solid var(--color-copper);
+    padding: 26px 32px;
     border-radius: 12px;
     transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
@@ -564,22 +564,22 @@ body {
 }
 
 .metric-number {
-    font-size: 1.85rem;
+    font-size: 2.25rem;
     font-weight: 700;
     color: var(--color-copper);
     background: rgba(226, 105, 31, 0.15);
-    padding: 12px 18px;
-    border-radius: 8px;
+    padding: 14px 22px;
+    border-radius: 10px;
     line-height: 1;
     flex-shrink: 0;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 64px;
+    min-width: 84px;
 }
 
 .metric-label {
-    font-size: 0.95rem;
+    font-size: 1.15rem;
     color: var(--color-bone);
     font-weight: 700;
     line-height: 1.4;
@@ -618,13 +618,12 @@ body {
 
     .about-metrics-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 36px;
-        padding-top: 40px;
+        gap: 20px;
+        padding-top: 36px;
     }
 
     .metric-column {
-        border-left: none;
-        padding-left: 0;
+        padding: 20px 24px;
     }
 }
 
