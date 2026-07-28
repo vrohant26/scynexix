@@ -520,7 +520,6 @@ if ( empty( $purpose_image_url ) ) {
 	<section class="disease-section">
 		<div class="disease-container">
 			<div class="disease-header">
-				<div class="disease-subtitle fs-xs"><?php echo esc_html( $disease_subtitle ); ?></div>
 				<h2 class="disease-title"><?php echo wp_kses_post( $disease_title ); ?></h2>
 				<div class="disease-desc fs-md">
 					<p><?php echo esc_html( $disease_desc ); ?></p>
@@ -546,7 +545,6 @@ if ( empty( $purpose_image_url ) ) {
 		<div class="pipeline-container">
 			<div class="pipeline-grid">
 				<div class="pipeline-sticky-col">
-					<div class="pipeline-subtitle fs-xs"><?php echo esc_html( $pipe_subtitle ); ?></div>
 					<h2 class="pipeline-title"><?php echo wp_kses_post( $pipe_title ); ?></h2>
 					<div class="pipeline-desc fs-md">
 						<p><?php echo esc_html( $pipe_desc ); ?></p>
@@ -608,7 +606,6 @@ if ( empty( $purpose_image_url ) ) {
 		<div class="news-container">
 			<div class="news-header">
 				<div class="news-header-content">
-					<div class="news-subtitle fs-xs"><?php echo esc_html( $news_subtitle ); ?></div>
 					<h2 class="news-title"><?php echo wp_kses_post( $news_title ); ?></h2>
 					<div class="news-desc fs-md">
 						<p><?php echo esc_html( $news_desc ); ?></p>
@@ -726,8 +723,6 @@ if ( empty( $purpose_image_url ) ) {
 				
 				<!-- Right Column (65%): Investor Relations Details -->
 				<div class="investor-details-col">
-					<div class="investor-subtitle fs-xs"><?php echo esc_html( $investor_subtitle ); ?></div>
-					
 					<h2 class="investor-title"><?php echo wp_kses_post( $investor_title ); ?></h2>
 					
 					<div class="investor-desc fs-md">
@@ -748,7 +743,6 @@ if ( empty( $purpose_image_url ) ) {
 		<div class="cta-banner-overlay"></div>
 		<div class="cta-banner-container">
 			<div class="cta-banner-content">
-				<div class="cta-banner-subtitle fs-xs"><?php echo esc_html( $cta_banner_subtitle ); ?></div>
 				<h2 class="cta-banner-title"><?php echo wp_kses_post( $cta_banner_title ); ?></h2>
 				<div class="cta-banner-desc fs-md">
 					<p><?php echo esc_html( $cta_banner_desc ); ?></p>
@@ -766,7 +760,6 @@ if ( empty( $purpose_image_url ) ) {
 			<div class="faq-grid">
 				<!-- Left Column: Sticky Title & Desc -->
 				<div class="faq-sticky-col">
-					<div class="faq-subtitle fs-xs"><?php echo esc_html( $faq_subtitle ); ?></div>
 					<h2 class="faq-title"><?php echo wp_kses_post( $faq_title ); ?></h2>
 					<div class="faq-desc fs-md">
 						<p><?php echo esc_html( $faq_desc ); ?></p>
