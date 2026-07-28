@@ -580,7 +580,7 @@ body {
 }
 
 .metric-label {
-    font-size: 1.15rem;
+    font-size: 1.15rem !important;
     color: var(--color-navy);
     font-weight: 700;
     line-height: 1.4;

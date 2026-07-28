@@ -492,7 +492,6 @@ if ( empty( $purpose_image_url ) ) {
 					</div>
 				</div>
 				<div class="purpose-content-col">
-					<div class="purpose-subtitle fs-xs"><?php echo esc_html( $purpose_subtitle ); ?></div>
 					<h2 class="purpose-title"><?php echo wp_kses_post( $purpose_title ); ?></h2>
 					
 					<div class="purpose-desc fs-md">
