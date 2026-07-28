@@ -24,22 +24,21 @@ Text Domain: scynexis
     --font-mono: 'Consolas', 'Courier New', Courier, monospace;
 
     /* Font Sizes */
-    --fs-xs: 1.2rem;
-    /* 19.2px */
-    --fs-sm: 1.25rem;
+    --fs-xs: 1rem;
+    /* 14px */
+    --fs-sm: 1rem;
+    /* 16px */
+    --fs-base: 1.125rem;
+    /* 18px */
+    --fs-body: 1.125rem;
+    /* 18px */
+    --fs-md: 1.25rem;
     /* 20px */
-    --fs-base: 1.35rem;
-    /* 21.6px */
-    --fs-body: 1.35rem;
-    /* 21.6px */
-    --fs-md: 1.5rem;
-    /* 24px */
-    --fs-lg: 2.1rem;
-    /* 33.6px */
-    --fs-display: clamp(3.25rem, 6.5vw, 4.85rem);
-    /* 52px - 77.6px */
-    --fs-display-small: clamp(2.1rem, 4vw, 2.65rem);
-    /* 33.6px - 42.4px */
+    --fs-lg: 1.75rem;
+    /* 28px */
+    --fs-display: clamp(2.75rem, 5.5vw, 4.25rem);
+    /* 28px */
+    --fs-display-small: clamp(1.75rem, 3.5vw, 2.25rem);
 }
 
 * {
@@ -522,7 +521,7 @@ body {
 
 .about-pill .pill-text {
     font-family: var(--font-sans);
-    font-size: var(--fs-xs);
+    font-size: 1.2rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -530,7 +529,7 @@ body {
 }
 
 .about-description {
-    font-size: var(--fs-lg);
+    font-size: 1.75rem;
     font-weight: 300;
     line-height: 1.5;
     margin-bottom: 3rem;
@@ -560,7 +559,7 @@ body {
 }
 
 .metric-number {
-    font-size: 4.2rem;
+    font-size: 3.5rem;
     line-height: 1.1;
     color: var(--color-bone);
 }
@@ -667,7 +666,7 @@ body {
     }
 
     .metric-number {
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     .site-footer .footer-container {
@@ -724,8 +723,8 @@ body {
 }
 
 .purpose-subtitle {
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
     color: var(--color-blue);
     text-transform: uppercase;
     letter-spacing: 3.5px;
@@ -771,7 +770,7 @@ body {
 }
 
 .purpose-metric-val {
-    font-size: 3.9rem;
+    font-size: 3.25rem;
     font-weight: 400;
     color: var(--color-copper);
     line-height: 1.1;
@@ -884,8 +883,8 @@ body {
 }
 
 .disease-subtitle {
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
     color: #fff;
     /* Use bright blue accent for pill text */
     text-transform: uppercase;
@@ -944,7 +943,7 @@ body {
 }
 
 .disease-card-title {
-    font-size: var(--fs-lg);
+    font-size: 1.75rem;
     font-weight: 700;
     color: var(--color-navy);
     margin-bottom: 16px;
@@ -1045,8 +1044,8 @@ body {
 }
 
 .pipeline-subtitle {
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
     color: var(--color-blue);
     text-transform: uppercase;
     letter-spacing: 3.5px;
@@ -1181,7 +1180,7 @@ body {
 }
 
 .pipeline-card-title {
-    font-size: 2.5rem;
+    font-size: 2.15rem;
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 8px;
@@ -1276,8 +1275,8 @@ body {
 }
 
 .news-subtitle {
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
     color: var(--color-copper);
     text-transform: uppercase;
     letter-spacing: 3.5px;
@@ -1388,7 +1387,7 @@ body {
 }
 
 .news-card-title {
-    font-size: 1.4rem;
+    font-size: 1.15rem;
     font-weight: 700;
     line-height: 1.45;
     color: #ffffff;
@@ -1632,8 +1631,8 @@ body {
 
 /* Right Column Details */
 .investor-subtitle {
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
     color: var(--color-blue);
     text-transform: uppercase;
     letter-spacing: 3.5px;
@@ -1743,8 +1742,8 @@ body {
 }
 
 .cta-banner-subtitle {
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
     color: var(--color-copper);
     text-transform: uppercase;
     letter-spacing: 3.5px;
@@ -1806,8 +1805,8 @@ body {
 }
 
 .faq-subtitle {
-    font-family: var(--font-mono);
-    font-size: var(--fs-xs);
+    font-family: var(--font-sans);
+    font-size: 1.2rem;
     color: var(--color-blue);
     text-transform: uppercase;
     letter-spacing: 3.5px;
@@ -1992,7 +1991,7 @@ body {
 
 .footer-brand-tagline {
     font-family: var(--font-mono);
-    font-size: 12px;
+    font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: var(--color-copper);
