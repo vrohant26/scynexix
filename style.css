@@ -493,22 +493,25 @@ body {
     width: 100%;
 }
 
-.about-header-row {
+.about-grid-layout {
     display: grid;
-    grid-template-columns: 0.3fr 1.2fr;
-    gap: 48px;
-    margin-bottom: 80px;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 60px;
+    align-items: stretch;
 }
 
-.about-pill-col {
+.about-content-col {
     display: flex;
+    flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
 }
 
 .about-pill {
     display: inline-flex;
     align-items: center;
     gap: 10px;
+    margin-bottom: 24px;
 }
 
 .about-pill .pill-dot {
@@ -521,7 +524,7 @@ body {
 
 .about-pill .pill-text {
     font-family: var(--font-sans);
-    font-size: 1.5rem !important;
+    font-size: var(--fs-xs);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -529,63 +532,77 @@ body {
 }
 
 .about-description {
-    font-size: 1.75rem;
+    font-size: clamp(1.4rem, 2.2vw, 1.8rem);
     font-weight: 300;
-    line-height: 1.5;
-    margin-bottom: 3rem;
+    line-height: 1.55;
+    margin-bottom: 32px;
     color: var(--color-bone);
+}
+
+.about-description p {
+    margin: 0;
+}
+
+.about-action-wrap {
+    margin-top: 8px;
+}
+
+/* Right Column Stat Cards Grid */
+.about-metrics-col {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .about-metrics-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
-    padding: 48px 0;
-    margin-bottom: 24px;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+    border-top: none;
+    padding: 0;
+    margin-bottom: 0;
 }
 
 .metric-column {
     display: flex;
-    align-items: center;
-    gap: 24px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 14px;
     background: var(--color-bone);
     border: 1px solid var(--color-border);
-    border-left: 4px solid var(--color-copper);
-    padding: 26px 32px;
+    border-top: 4px solid var(--color-copper);
+    padding: 28px 32px;
     border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(11, 36, 64, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    height: 100%;
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .metric-column:hover {
     background: var(--color-bone);
     transform: translateY(-3px);
-    box-shadow: 0 10px 28px rgba(11, 36, 64, 0.12);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.12);
 }
 
 .metric-number {
-    font-size: 2.25rem;
+    font-size: 2.85rem;
     font-weight: 700;
     color: var(--color-copper);
-    background: rgba(226, 105, 31, 0.08);
-    padding: 14px 22px;
-    border-radius: 10px;
     line-height: 1;
-    flex-shrink: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 84px;
+    margin: 0;
 }
 
 .metric-label {
-    font-size: 1.15rem !important;
+    font-size: 1.25rem !important;
     color: var(--color-navy);
     font-weight: 700;
-    line-height: 1.4;
+    line-height: 1.35;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 0.8px;
 }
 
 /* Mobile & Tablet Responsiveness */
@@ -611,10 +628,9 @@ body {
         padding: 80px 0;
     }
 
-    .about-header-row {
+    .about-grid-layout {
         grid-template-columns: 1fr;
-        gap: 28px;
-        margin-bottom: 50px;
+        gap: 44px;
     }
 
     .about-metrics-grid {
@@ -772,35 +788,7 @@ body {
     line-height: 1.6;
     color: var(--color-navy);
     opacity: 0.9;
-    margin-bottom: 36px;
-    border-bottom: 1px solid rgba(11, 36, 64, 0.1);
-    padding-bottom: 28px;
-}
-
-.purpose-metrics-row {
-    display: flex;
-    gap: 48px;
-    border-bottom: 1px solid rgba(11, 36, 64, 0.1);
-    padding-bottom: 28px;
     margin-bottom: 32px;
-}
-
-.purpose-metric-item {
-    flex: 1;
-}
-
-.purpose-metric-val {
-    font-size: 3.25rem;
-    font-weight: 400;
-    color: var(--color-copper);
-    line-height: 1.1;
-}
-
-.purpose-metric-lbl {
-    font-size: var(--fs-xs);
-    font-weight: 500;
-    color: rgba(11, 36, 64, 0.75);
-    margin-top: 6px;
 }
 
 /* Outline CTA Button */
@@ -1169,21 +1157,17 @@ body {
     letter-spacing: 0.5px;
     margin-bottom: 24px;
     border-radius: 4px;
+    color: var(--color-bone);
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.badge-clinical {
-    background-color: #EBF8FF;
-    color: #2B6CB0;
-}
-
-.badge-preclinical {
-    background-color: #EDF2F7;
-    color: #4A5568;
-}
-
+.badge-clinical,
+.badge-preclinical,
 .badge-approved {
-    background-color: #E6FFFA;
-    color: #234E52;
+    color: var(--color-bone);
+    background-color: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .pipeline-card-icon {
@@ -1379,55 +1363,58 @@ body {
 /* 3.5 Cards in View */
 .news-card {
     flex: 0 0 calc((100% - 60px) / 3.5);
-    background-color: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: var(--color-bone);
+    border: 1px solid var(--color-border);
     padding: 32px;
-    border-radius: 8px;
+    border-radius: 12px;
     display: flex;
     flex-direction: column;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--color-navy);
     min-height: 200px;
-    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .news-card:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--color-bone);
+    border-color: var(--color-copper);
     transform: translateY(-3px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
 
 .news-card-date {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: var(--fs-xs);
     color: var(--color-copper);
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 16px;
+    font-weight: 700;
 }
 
 .news-card-title {
     font-size: 1.15rem;
     font-weight: 700;
     line-height: 1.45;
-    color: #ffffff;
+    color: var(--color-navy);
     flex: 1;
     margin-bottom: 20px;
 }
 
 .news-card-cta {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: var(--fs-xs);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--color-copper);
     margin-top: auto;
     transition: color 0.2s ease;
 }
 
 .news-card:hover .news-card-cta {
-    color: var(--color-copper);
+    color: var(--color-navy);
 }
 
 /* View All Button (Outline Light) */
@@ -1968,13 +1955,14 @@ body {
 
 
 /* Premium Custom Footer */
+/* Premium Custom Footer */
 .site-footer {
     position: relative;
     width: 100%;
-    background-color: var(--color-navy);
+    background-color: var(--color-bone);
     padding: 80px 0 40px 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    color: var(--color-bone);
+    border-top: 1px solid var(--color-border);
+    color: var(--color-navy);
 }
 
 .footer-container {
@@ -1989,6 +1977,7 @@ body {
     grid-template-columns: 1.5fr 1fr 1fr 1fr;
     gap: 48px;
     margin-bottom: 60px;
+    width: 100%;
 }
 
 .footer-brand-col {
@@ -2002,15 +1991,15 @@ body {
 }
 
 .footer-logo {
-    max-height: 100px;
+    max-height: 60px;
     width: auto;
     display: block;
-    filter: brightness(0) invert(1);
-    /* Forces logo to white for dark navy contrast */
+    filter: none;
+    /* Original logo color on bone background */
 }
 
 .footer-brand-tagline {
-    font-family: var(--font-mono);
+    font-family: var(--font-sans);
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
@@ -2020,19 +2009,20 @@ body {
 
 .footer-brand-desc {
     line-height: 1.6;
-    color: rgba(244, 241, 236, 0.65);
+    color: rgba(11, 36, 64, 0.75);
     margin-bottom: 24px;
     max-width: 320px;
 }
 
 .footer-ticker-badge {
     align-self: flex-start;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(11, 36, 64, 0.2);
     padding: 6px 14px;
     border-radius: 4px;
     font-family: var(--font-mono);
     font-weight: 700;
-    color: #ffffff;
+    color: var(--color-navy);
+    background: rgba(11, 36, 64, 0.04);
     letter-spacing: 0.5px;
 }
 
@@ -2061,7 +2051,7 @@ body {
 }
 
 .footer-links-list a {
-    color: rgba(244, 241, 236, 0.65);
+    color: rgba(11, 36, 64, 0.75);
     text-decoration: none;
     transition: color 0.2s ease, padding-left 0.2s ease;
     display: inline-block;
@@ -2074,12 +2064,12 @@ body {
 
 /* Bottom copyright & legal row */
 .footer-bottom-row {
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-top: 1px solid var(--color-border);
     padding-top: 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: rgba(244, 241, 236, 0.45);
+    color: rgba(11, 36, 64, 0.6);
     width: 100%;
 }
 
@@ -2089,13 +2079,13 @@ body {
 }
 
 .footer-legal-links a {
-    color: rgba(244, 241, 236, 0.45);
+    color: rgba(11, 36, 64, 0.6);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
 .footer-legal-links a:hover {
-    color: #ffffff;
+    color: var(--color-navy);
 }
 
 /* Responsive Footer overrides */

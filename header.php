@@ -59,53 +59,7 @@ if ( empty( $ticker_btn_link ) ) {
 
 <div class="site-wrapper">
 	<!-- Top Bar Ticker -->
-	<div class="top-bar-ticker">
-		<div class="top-bar-container">
-			<button class="top-bar-arrow prev" aria-label="Previous info">
-				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-			</button>
-			
-			<div class="top-bar-content">
-				<!-- NASDAQ Stock -->
-				<div class="top-bar-item stock-item">
-					<div class="top-bar-label">NASDAQ</div>
-					<div class="top-bar-value stock-value-row">
-						<span class="stock-currency">$</span><span class="stock-price-val"><?php echo esc_html( $ticker_price ); ?></span>
-						<span class="stock-change up">
-							<span class="change-indicator">&uarr;</span> <span class="change-val"><?php echo esc_html( $ticker_change ); ?></span>
-						</span>
-					</div>
-				</div>
-				
-				<div class="top-bar-divider"></div>
-				
-				<!-- Cash -->
-				<div class="top-bar-item">
-					<div class="top-bar-label">CASH</div>
-					<div class="top-bar-value"><?php echo esc_html( $ticker_cash ); ?></div>
-				</div>
-				
-				<div class="top-bar-divider"></div>
-				
-				<!-- Runway -->
-				<div class="top-bar-item">
-					<div class="top-bar-label">RUNWAY</div>
-					<div class="top-bar-value"><?php echo esc_html( $ticker_runway ); ?></div>
-				</div>
-				
-				<div class="top-bar-divider"></div>
-				
-				<!-- Button CTA -->
-				<div class="top-bar-item btn-item">
-					<a href="<?php echo esc_url( $ticker_btn_link ); ?>" class="top-bar-btn"><?php echo esc_html( $ticker_btn_text ); ?></a>
-				</div>
-			</div>
-			
-			<button class="top-bar-arrow next" aria-label="Next info">
-				<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-			</button>
-		</div>
-	</div>
+
 
 	<header class="site-header">
 		<div class="nav-container">

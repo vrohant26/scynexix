@@ -456,18 +456,25 @@ if ( empty( $purpose_image_url ) ) {
 
 	<section class="about-section">
 		<div class="about-container">
-			<div class="about-header-row">
-				<div class="about-pill-col">
+			<div class="about-grid-layout">
+				<!-- Left Column: Topic Pill + Narrative Description + CTA Button -->
+				<div class="about-content-col">
 					<div class="about-pill">
 						<span class="pill-dot"></span>
 						<span class="pill-text fs-xs"><?php echo esc_html( $about_pill ); ?></span>
 					</div>
-				</div>
-				<div class="about-desc-col">
+					
 					<div class="about-description fs-display-small">
 						<?php echo wp_kses_post( wpautop( $about_desc ) ); ?>
 					</div>
 					
+					<div class="about-action-wrap">
+						<a href="<?php echo esc_url( $about_btn_link ); ?>" class="btn btn-primary fs-base"><?php echo esc_html( $about_btn_text ); ?></a>
+					</div>
+				</div>
+
+				<!-- Right Column: 2x2 Impact Metric Cards -->
+				<div class="about-metrics-col">
 					<div class="about-metrics-grid">
 						<?php foreach ( $metrics as $metric ) : ?>
 							<div class="metric-column">
@@ -476,8 +483,6 @@ if ( empty( $purpose_image_url ) ) {
 							</div>
 						<?php endforeach; ?>
 					</div>
-					
-					<a href="<?php echo esc_url( $about_btn_link ); ?>" class="btn btn-primary fs-base"><?php echo esc_html( $about_btn_text ); ?></a>
 				</div>
 			</div>
 		</div>
@@ -498,16 +503,7 @@ if ( empty( $purpose_image_url ) ) {
 						<p><?php echo esc_html( $purpose_desc ); ?></p>
 					</div>
 
-					<div class="purpose-metrics-row">
-						<div class="purpose-metric-item">
-							<div class="purpose-metric-val"><?php echo esc_html( $purpose_metric1_val ); ?></div>
-							<div class="purpose-metric-lbl fs-xs"><?php echo esc_html( $purpose_metric1_lbl ); ?></div>
-						</div>
-						<div class="purpose-metric-item">
-							<div class="purpose-metric-val"><?php echo esc_html( $purpose_metric2_val ); ?></div>
-							<div class="purpose-metric-lbl fs-xs"><?php echo esc_html( $purpose_metric2_lbl ); ?></div>
-						</div>
-					</div>
+
 
 					<div class="purpose-actions">
 						<a href="<?php echo esc_url( $purpose_btn_link ); ?>" class="btn btn-primary fs-base"><?php echo esc_html( $purpose_btn_text ); ?></a>
