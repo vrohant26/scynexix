@@ -521,7 +521,7 @@ body {
 
 .about-pill .pill-text {
     font-family: var(--font-sans);
-    font-size: 1.2rem;
+    font-size: 1.5rem !important;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -538,39 +538,53 @@ body {
 
 .about-metrics-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 40px;
-    border-top: 1px solid rgba(244, 241, 236, 0.15);
-    padding: 60px 0;
-
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 48px 0;
+    margin-bottom: 12px;
 }
 
 .metric-column {
     display: flex;
-    flex-direction: column;
-    gap: 12px;
-    border-left: 1px solid rgba(244, 241, 236, 0.15);
-    padding-left: 28px;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3.5px solid var(--color-copper);
+    padding: 22px 28px;
+    border-radius: 12px;
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
 }
 
-.metric-column:first-child {
-    border-left: none;
-    padding-left: 0;
+.metric-column:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
 }
 
 .metric-number {
-    font-size: 3.5rem;
-    line-height: 1.1;
-    color: var(--color-bone);
+    font-size: 1.85rem;
+    font-weight: 700;
+    color: var(--color-copper);
+    background: rgba(226, 105, 31, 0.15);
+    padding: 12px 18px;
+    border-radius: 8px;
+    line-height: 1;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 64px;
 }
 
 .metric-label {
-    font-size: var(--fs-xs);
-    color: rgba(244, 241, 236, 0.6);
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 500;
+    font-size: 0.95rem;
+    color: var(--color-bone);
+    font-weight: 700;
     line-height: 1.4;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 /* Mobile & Tablet Responsiveness */
@@ -662,11 +676,17 @@ body {
 
     .about-metrics-grid {
         grid-template-columns: 1fr;
-        gap: 28px;
+        gap: 16px;
+    }
+
+    .metric-column {
+        padding: 18px 22px;
     }
 
     .metric-number {
-        font-size: 2.5rem;
+        font-size: 1.5rem;
+        min-width: 52px;
+        padding: 8px 14px;
     }
 
     .site-footer .footer-container {
